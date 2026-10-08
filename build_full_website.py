@@ -1,0 +1,943 @@
+import json
+import os
+import re
+
+# Load JSON Data
+with open('data/pages_all.json', 'r', encoding='utf-8') as f:
+    pages_all = json.load(f)
+
+# Image mapping helper
+def get_valid_image(img_list, fallback='Ball-Bearing.jpg'):
+    if not img_list:
+        return f'assets/images/{fallback}'
+    for img in img_list:
+        if isinstance(img, dict):
+            path_cand = img.get('local_path') or img.get('src') or ''
+        else:
+            path_cand = str(img)
+        if not path_cand:
+            continue
+        clean = os.path.basename(path_cand.split('?')[0])
+        # Skip small icons like achievement.png
+        if clean in ['achievement.png', 'experience.png', 'customer-service.png']:
+            continue
+        if os.path.exists(os.path.join('assets/images', clean)):
+            return f'assets/images/{clean}'
+    return f'assets/images/{fallback}'
+
+# Categorize
+product_slugs = ['ball-bearing', 'pillow-block-bearing', 'linear-motion-bearing', 'timing-belts', 'conveyor-belts', 'flat-belts', 'v-belts', 'special-coated-belts', 'rubber-emery-roller-covering', 'cots-apron', 'oil-grease', 'lubrications-oil-grease', 'seals-o-ring']
+brand_slugs = ['megadyne', 'fenner', 'continental', 'mitsuboshi', 'gates', 'timken', 'fag', 'skf', 'nmb', 'ijk', 'nachi']
+industry_slugs = [p['slug'] for p in pages_all if 'industry' in p['slug'] or p['slug'] in ['overhead-cranes', 'metalworking']]
+
+products_data = []
+for p in pages_all:
+    if p['slug'] in product_slugs:
+        cat_type = 'bearings' if 'bearing' in p['slug'] else ('belts' if 'belt' in p['slug'] else ('lubricants' if 'oil' in p['slug'] or 'grease' in p['slug'] else 'spares'))
+        products_data.append({
+            'title': p['title'],
+            'slug': p['slug'],
+            'category': cat_type,
+            'summary': p.get('meta_description', f"High-precision industrial {p['title']} engineered for heavy-duty B2B applications and high operational reliability."),
+            'image': get_valid_image(p.get('images', []), 'Ball-Bearing.jpg'),
+            'specs': [
+                {'label': 'Material', 'val': 'High Carbon Chrome Steel / Synthetic Elastomer'},
+                {'label': 'Standard', 'val': 'ISO / DIN / JIS Quality Compliant'},
+                {'label': 'Supply Mode', 'val': 'Wholesale & B2B Sourcing Desk'},
+                {'label': 'Availability', 'val': 'Ex-Stock / Fast Trade Dispatch'}
+            ]
+        })
+
+industries_data = []
+for p in pages_all:
+    if p['slug'] in industry_slugs:
+        clean_title = p['title'].replace(' Industry', '').strip()
+        industries_data.append({
+            'title': p['title'],
+            'short_title': clean_title,
+            'slug': p['slug'],
+            'summary': p.get('meta_description', f"Engineered mechanical components, transmission belts and heavy duty bearings optimized for {p['title']} operations."),
+            'image': get_valid_image(p.get('images', []), 'Automation-Industry.jpg')
+        })
+
+brands_data = [
+    {'name': 'CONTINENTAL', 'badge': 'Timing & V-Belts', 'desc': 'Heavy Duty Industrial Belts & Drive Solutions'},
+    {'name': 'MITSUBOSHI', 'badge': 'Power Transmission', 'desc': 'High Torque Synchronous & Automotive Belts'},
+    {'name': 'GATES', 'badge': 'Engineered Belts', 'desc': 'Poly Chain & Heavy Machinery Drive Belts'},
+    {'name': 'SKF', 'badge': 'Precision Bearings', 'desc': 'Global Standard Deep Groove & Roller Bearings'},
+    {'name': 'FAG / INA', 'badge': 'Industrial Bearings', 'desc': 'German Precision Spherical & Cylindrical Bearings'},
+    {'name': 'TIMKEN', 'badge': 'Tapered Bearings', 'desc': 'Ultra High Load Tapered Roller Bearings'},
+    {'name': 'FENNER', 'badge': 'Drive Belts', 'desc': 'Classical & Wedge Industrial V-Belts'},
+    {'name': 'MEGADYNE', 'badge': 'Polyurethane Belts', 'desc': 'Thermoplastic & Rubber Timing Belt Solutions'},
+    {'name': 'NACHI', 'badge': 'Japanese Bearings', 'desc': 'Precision Machine Tool & High Speed Bearings'},
+    {'name': 'IJK / NMB', 'badge': 'Miniature Bearings', 'desc': 'Instrument Grade & Small Bore Bearings'}
+]
+
+html_content = f"""<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>M/s Belubeari Exim | Industrial Bearings, Power Transmission Belts & Conveyor Spares Mumbai</title>
+  <meta name="description" content="M/s Belubeari Exim - Premier Mumbai B2B distributor for industrial bearings, timing belts, conveyor spares, lubrication greases & mechanical components. Located at Masjid Bunder, Mumbai." />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {{
+      theme: {{
+        extend: {{
+          colors: {{
+            brand: {{
+              50: '#f0f7ff',
+              100: '#e0effe',
+              200: '#bae0fd',
+              300: '#7cc7fb',
+              400: '#38a9f8',
+              500: '#0e8ce9',
+              600: '#026fc7',
+              700: '#0358a1',
+              800: '#074b84',
+              900: '#0c3f6e',
+              950: '#082849',
+            }},
+            slatebg: {{
+              850: '#111b2d',
+              900: '#0b1324',
+              950: '#060a14'
+            }}
+          }},
+          fontFamily: {{
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          }}
+        }}
+      }}
+    }}
+  </script>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- Alpine.js Core -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.5/dist/cdn.min.js"></script>
+
+  <style>
+    *, *::before, *::after {{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }}
+    html, body {{
+      max-width: 100%;
+      overflow-x: clip;
+      scroll-behavior: smooth;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      background-color: #0b1324;
+      color: #e2e8f0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }}
+    img, video, svg, canvas, iframe {{
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }}
+    .container-fluid {{
+      width: 100%;
+      max-width: min(100% - 2rem, 1320px);
+      margin-inline: auto;
+      padding-inline: clamp(1rem, 3.5vw, 2.5rem);
+    }}
+    .grid-auto-fit {{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+      gap: clamp(1.25rem, 2.5vw, 2rem);
+      width: 100%;
+    }}
+    .glass-card {{
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(56, 189, 248, 0.15);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }}
+    .glass-card:hover {{
+      border-color: rgba(56, 189, 248, 0.45);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px -10px rgba(14, 140, 233, 0.3);
+    }}
+    .badge-glow {{
+      box-shadow: 0 0 15px rgba(14, 140, 233, 0.35);
+    }}
+    .text-gradient {{
+      background: linear-gradient(135deg, #ffffff 0%, #bae0fd 50%, #38a9f8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }}
+    .text-gold-gradient {{
+      background: linear-gradient(135deg, #fef08a 0%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }}
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {{
+      width: 8px;
+    }}
+    ::-webkit-scrollbar-track {{
+      background: #060a14;
+    }}
+    ::-webkit-scrollbar-thumb {{
+      background: #1e3a8a;
+      border-radius: 4px;
+    }}
+    ::-webkit-scrollbar-thumb:hover {{
+      background: #3b82f6;
+    }}
+  </style>
+</head>
+
+<body x-data="belubeariApp()" class="min-h-screen flex flex-col bg-slatebg-900 text-slate-200 selection:bg-brand-500 selection:text-white">
+
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <div class="bg-slatebg-950 border-b border-slate-800 text-xs py-2 px-4">
+    <div class="container-fluid flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-3 text-slate-400">
+        <span class="flex items-center gap-1.5 font-medium text-slate-300">
+          <i class="fa-solid fa-location-dot text-brand-400"></i> Flat No. 8, Yusuf Meherali Road, Masjid Bunder, Mumbai – 400003
+        </span>
+        <span class="hidden md:inline-block text-slate-700">|</span>
+        <span class="hidden md:flex items-center gap-1.5 text-emerald-400 font-mono">
+          <i class="fa-solid fa-circle-check text-[10px]"></i> Est. 2018 · Genuine Quality Sourcing Desk
+        </span>
+      </div>
+      <div class="flex items-center gap-4 text-slate-300">
+        <a href="https://wa.me/919820000000?text=Hello%20Belubeari%20Exim,%20I%20have%20an%20industrial%20purchase%20enquiry" target="_blank" class="hover:text-emerald-400 transition flex items-center gap-1.5 font-bold">
+          <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i> WhatsApp Quick RFQ
+        </a>
+        <a href="#quick-rfq" class="bg-brand-600 hover:bg-brand-500 text-white px-3 py-1 rounded text-[11px] font-bold tracking-wide uppercase transition">
+          Direct Inquiry
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN STICKY NAVBAR -->
+  <header class="sticky top-0 z-50 bg-slatebg-900/90 backdrop-blur-md border-b border-slate-800">
+    <div class="container-fluid flex items-center justify-between h-20">
+      
+      <!-- BRAND LOGO -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-lg bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center text-white text-xl font-black shadow-lg shadow-brand-500/20 group-hover:scale-105 transition">
+          <i class="fa-solid fa-gear group-hover:rotate-90 transition-transform duration-700"></i>
+        </div>
+        <div>
+          <div class="text-xl sm:text-2xl font-black tracking-tight text-white uppercase flex items-center gap-2">
+            BELUBEARI <span class="text-brand-400 font-bold">EXIM</span>
+          </div>
+          <div class="text-[10px] tracking-widest uppercase font-mono text-slate-400">
+            MUMBAI · B2B TRADE & DISTRIBUTION
+          </div>
+        </div>
+      </a>
+
+      <!-- DESKTOP NAV -->
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-300">
+        <a href="#home" class="hover:text-brand-400 transition py-2">Home</a>
+        <a href="#products" class="hover:text-brand-400 transition py-2">Products ({len(products_data)})</a>
+        <a href="#industries" class="hover:text-brand-400 transition py-2">Industries (21+)</a>
+        <a href="#brands" class="hover:text-brand-400 transition py-2">Brands</a>
+        <a href="#process" class="hover:text-brand-400 transition py-2">Sourcing Flow</a>
+        <a href="#about" class="hover:text-brand-400 transition py-2">About Us</a>
+        <a href="#contact" class="hover:text-brand-400 transition py-2">Contact</a>
+      </nav>
+
+      <!-- CTA & SEARCH TRIGGER -->
+      <div class="flex items-center gap-3">
+        <a href="#quick-rfq" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-400 text-white text-xs font-bold uppercase tracking-wider px-4 py-2.5 rounded-lg shadow-lg shadow-brand-600/30 hover:scale-[1.02] active:scale-[0.98] transition">
+          <i class="fa-solid fa-file-invoice"></i> Get B2B Quote
+        </a>
+        <button @click="mobileMenu = !mobileMenu" class="lg:hidden w-10 h-10 rounded-lg bg-slate-800 text-slate-200 flex items-center justify-center text-lg hover:bg-slate-700">
+          <i :class="mobileMenu ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- MOBILE OFF-CANVAS -->
+    <div x-show="mobileMenu" x-transition class="lg:hidden bg-slatebg-950 border-b border-slate-800 py-4 px-6 space-y-3 font-semibold text-sm">
+      <a @click="mobileMenu = false" href="#home" class="block py-2 text-slate-200 hover:text-brand-400">Home</a>
+      <a @click="mobileMenu = false" href="#products" class="block py-2 text-slate-200 hover:text-brand-400">Products Catalog</a>
+      <a @click="mobileMenu = false" href="#industries" class="block py-2 text-slate-200 hover:text-brand-400">Industries Application</a>
+      <a @click="mobileMenu = false" href="#brands" class="block py-2 text-slate-200 hover:text-brand-400">Brands We Stock</a>
+      <a @click="mobileMenu = false" href="#process" class="block py-2 text-slate-200 hover:text-brand-400">4-Step RFQ Flow</a>
+      <a @click="mobileMenu = false" href="#about" class="block py-2 text-slate-200 hover:text-brand-400">About Belubeari Exim</a>
+      <a @click="mobileMenu = false" href="#contact" class="block py-2 text-slate-200 hover:text-brand-400">Contact & Masjid Bunder Location</a>
+      <div class="pt-3 border-t border-slate-800">
+        <a @click="mobileMenu = false" href="#quick-rfq" class="block text-center bg-brand-600 hover:bg-brand-500 text-white font-bold py-2.5 rounded-lg">
+          Request Instant Bulk Quote
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="relative overflow-hidden py-16 sm:py-24 border-b border-slate-800 bg-gradient-to-b from-slatebg-950 via-slatebg-900 to-slatebg-900">
+    <!-- Ambient Glow Blobs -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-brand-600/15 blur-[120px] rounded-full pointer-events-none"></div>
+    <div class="absolute bottom-0 right-10 w-[400px] h-[250px] bg-sky-500/10 blur-[100px] rounded-full pointer-events-none"></div>
+
+    <div class="container-fluid relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Hero Copy -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-950/80 border border-brand-500/30 text-brand-300 text-xs font-mono font-semibold">
+            <span class="w-2 h-2 rounded-full bg-brand-400 animate-pulse"></span>
+            MASJID BUNDER · MUMBAI WHOLESALE SOURCING DESK
+          </div>
+          
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
+            Industrial Parts. <br/>
+            <span class="text-gradient">Reliable Sourcing</span> Starts Here.
+          </h1>
+          
+          <p class="text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed">
+            Industrial power transmission belts, precision ball bearings, linear motion guides, and specialized conveyor spares. Direct trade pricing, verified part-number matching, and expedited B2B dispatch across India.
+          </p>
+
+          <!-- Interactive Search Bar -->
+          <div class="bg-slatebg-950/90 border border-slate-700 p-2 rounded-xl flex flex-col sm:flex-row items-center gap-2 max-w-xl shadow-2xl">
+            <div class="flex items-center gap-3 px-3 w-full">
+              <i class="fa-solid fa-magnifying-glass text-brand-400"></i>
+              <input type="text" x-model="searchQuery" placeholder="Search by Part No., Bearing Type, Belt Spec..." class="bg-transparent border-none outline-none text-white text-sm w-full placeholder-slate-500 font-medium" />
+            </div>
+            <a href="#products" class="w-full sm:w-auto px-6 py-2.5 bg-brand-600 hover:bg-brand-500 text-white rounded-lg text-xs font-bold uppercase tracking-wider transition text-center whitespace-nowrap">
+              Find Part
+            </a>
+          </div>
+
+          <!-- Hero Metrics Bento -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 max-w-2xl">
+            <div class="p-3 rounded-lg bg-slatebg-950 border border-slate-800/80">
+              <div class="text-2xl font-black text-white font-mono">2018*</div>
+              <div class="text-[11px] text-slate-400 uppercase tracking-wide mt-0.5">Established</div>
+            </div>
+            <div class="p-3 rounded-lg bg-slatebg-950 border border-slate-800/80">
+              <div class="text-2xl font-black text-brand-400 font-mono">50+</div>
+              <div class="text-[11px] text-slate-400 uppercase tracking-wide mt-0.5">Product Lines</div>
+            </div>
+            <div class="p-3 rounded-lg bg-slatebg-950 border border-slate-800/80">
+              <div class="text-2xl font-black text-emerald-400 font-mono">21+</div>
+              <div class="text-[11px] text-slate-400 uppercase tracking-wide mt-0.5">Industries</div>
+            </div>
+            <div class="p-3 rounded-lg bg-slatebg-950 border border-slate-800/80">
+              <div class="text-2xl font-black text-sky-400 font-mono">B2B</div>
+              <div class="text-[11px] text-slate-400 uppercase tracking-wide mt-0.5">Trade Focus</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Hero Interactive Showcase -->
+        <div class="lg:col-span-5">
+          <div class="glass-card rounded-2xl p-6 relative overflow-hidden border border-brand-500/20 shadow-2xl">
+            <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+                <span class="text-xs font-mono font-bold text-slate-300">ACTIVE INQUIRY DESK</span>
+              </div>
+              <span class="text-xs font-mono text-brand-400">MUMBAI HUB</span>
+            </div>
+
+            <!-- Showcase Image with Brand Stamp -->
+            <div class="my-5 relative rounded-xl overflow-hidden group">
+              <img src="assets/images/Ball-Bearing.jpg" alt="Industrial Bearings Belubeari Exim" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-slatebg-950 via-transparent to-transparent"></div>
+              <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+                <span class="px-2.5 py-1 rounded bg-slatebg-900/90 text-white text-[11px] font-mono border border-slate-700">
+                  Precision Rotary Bearings
+                </span>
+                <span class="px-2.5 py-1 rounded bg-brand-600/90 text-white text-[11px] font-bold">
+                  ISO 9001:2015
+                </span>
+              </div>
+            </div>
+
+            <!-- Quick RFQ Form in Hero -->
+            <div class="space-y-3">
+              <div class="text-xs text-slate-300 font-semibold flex items-center justify-between">
+                <span>Need immediate stock availability?</span>
+                <span class="text-emerald-400">Response in &lt; 2 Hrs</span>
+              </div>
+              <a href="https://wa.me/919820000000?text=Hi%20Belubeari%20Exim,%20I%20need%20a%20quotation%20for%20Bearings/Belts" target="_blank" class="w-full py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-emerald-900/30 transition">
+                <i class="fa-brands fa-whatsapp text-lg"></i> Direct WhatsApp Enquiry
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BRANDS WE STOCK STRIP -->
+  <section id="brands" class="py-10 bg-slatebg-950 border-b border-slate-800">
+    <div class="container-fluid">
+      <div class="text-center mb-6">
+        <span class="text-xs font-mono uppercase text-brand-400 tracking-widest">GLOBAL INDUSTRIAL STANDARDS</span>
+        <h3 class="text-xl font-bold text-white mt-1">Authorized Sourcing & Distributed Brands</h3>
+      </div>
+      
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+        {"".join([f'''
+        <div class="p-4 rounded-xl bg-slatebg-900/80 border border-slate-800 hover:border-brand-500/40 text-center transition group">
+          <div class="text-base font-black text-white group-hover:text-brand-400 transition">{b['name']}</div>
+          <div class="text-[11px] text-brand-300 font-mono mt-0.5">{b['badge']}</div>
+          <div class="text-[10px] text-slate-400 mt-1 line-clamp-1">{b['desc']}</div>
+        </div>
+        ''' for b in brands_data])}
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS SECTION WITH FILTER & LIVE SEARCH -->
+  <section id="products" class="py-16 bg-slatebg-900 border-b border-slate-800">
+    <div class="container-fluid">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+        <div>
+          <div class="inline-flex items-center gap-2 text-xs font-mono text-brand-400 uppercase tracking-wider mb-2">
+            <i class="fa-solid fa-cubes"></i> Specification-Led Catalog
+          </div>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white">
+            Industrial Components for Real-World Applications
+          </h2>
+          <p class="text-slate-400 text-sm sm:text-base mt-2 max-w-2xl">
+            Select accurate specifications, part numbers, and brand preferences. Request transparent wholesale pricing and immediate dispatch terms.
+          </p>
+        </div>
+
+        <!-- Category Filter Tabs -->
+        <div class="flex flex-wrap items-center gap-2 bg-slatebg-950 p-1.5 rounded-xl border border-slate-800 text-xs font-semibold">
+          <button @click="activeCat = 'all'" :class="activeCat === 'all' ? 'bg-brand-600 text-white' : 'text-slate-400 hover:text-white'" class="px-3.5 py-2 rounded-lg transition">
+            All Products
+          </button>
+          <button @click="activeCat = 'bearings'" :class="activeCat === 'bearings' ? 'bg-brand-600 text-white' : 'text-slate-400 hover:text-white'" class="px-3.5 py-2 rounded-lg transition">
+            Bearings
+          </button>
+          <button @click="activeCat = 'belts'" :class="activeCat === 'belts' ? 'bg-brand-600 text-white' : 'text-slate-400 hover:text-white'" class="px-3.5 py-2 rounded-lg transition">
+            Power Belts
+          </button>
+          <button @click="activeCat = 'lubricants'" :class="activeCat === 'lubricants' ? 'bg-brand-600 text-white' : 'text-slate-400 hover:text-white'" class="px-3.5 py-2 rounded-lg transition">
+            Greases & Oils
+          </button>
+          <button @click="activeCat = 'spares'" :class="activeCat === 'spares' ? 'bg-brand-600 text-white' : 'text-slate-400 hover:text-white'" class="px-3.5 py-2 rounded-lg transition">
+            Seals & Spares
+          </button>
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {"".join([f'''
+        <div x-show="(activeCat === 'all' || activeCat === '{p['category']}') && (searchQuery === '' || '{p['title'].lower()}'.includes(searchQuery.toLowerCase()))" 
+             x-transition class="glass-card rounded-2xl overflow-hidden flex flex-col group">
+          
+          <!-- Image Container -->
+          <div class="relative h-52 bg-slate-950 overflow-hidden">
+            <img src="{p['image']}" alt="{p['title']} M/s Belubeari Exim" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" />
+            <div class="absolute top-3 left-3 bg-slatebg-900/90 backdrop-blur-sm border border-slate-700 text-brand-300 text-[10px] font-mono px-2 py-0.5 rounded uppercase">
+              {p['category']}
+            </div>
+            <div class="absolute top-3 right-3 bg-emerald-900/80 border border-emerald-500/40 text-emerald-300 text-[10px] font-mono px-2 py-0.5 rounded">
+              B2B Stock
+            </div>
+          </div>
+
+          <!-- Body -->
+          <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <h3 class="text-lg font-bold text-white group-hover:text-brand-300 transition">
+                {p['title']}
+              </h3>
+              <p class="text-xs text-slate-400 mt-2 line-clamp-2 leading-relaxed">
+                {p['summary']}
+              </p>
+            </div>
+
+            <!-- Specs Pill -->
+            <div class="space-y-1.5 text-[11px] font-mono bg-slatebg-950/80 p-3 rounded-lg border border-slate-800">
+              <div class="flex justify-between text-slate-400">
+                <span>Grade:</span>
+                <span class="text-slate-200">Industrial Specification</span>
+              </div>
+              <div class="flex justify-between text-slate-400">
+                <span>MOQ:</span>
+                <span class="text-emerald-400">Per Inquiry / Wholesale</span>
+              </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="pt-2 flex items-center gap-2">
+              <button @click="openProductModal('{p['title']}', '{p['summary']}', '{p['image']}')" class="flex-1 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold rounded-lg transition text-center">
+                Specs Detail
+              </button>
+              <a href="https://wa.me/919820000000?text=Hi%20Belubeari%20Exim,%20I%20am%20enquiring%20about%20{p['title']}%20part%20numbers%20and%20pricing." target="_blank" class="px-3 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg text-xs font-bold transition flex items-center justify-center">
+                <i class="fa-brands fa-whatsapp text-sm"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        ''' for p in products_data])}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 21+ INDUSTRIES SERVED SECTION -->
+  <section id="industries" class="py-16 bg-slatebg-950 border-b border-slate-800">
+    <div class="container-fluid">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs font-mono uppercase text-brand-400 tracking-widest">CROSS-SECTOR APPLICATION</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-2">
+          Serving 21+ Critical Industrial Sectors
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-2">
+          From heavy continuous duty cement kilns to precision cleanroom pharmaceutical conveyors, Belubeari Exim supplies mission-critical mechanical components.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+        {"".join([f'''
+        <div class="glass-card rounded-xl p-4 text-center group cursor-pointer" @click="openIndustryModal('{ind['title']}', '{ind['summary']}', '{ind['image']}')">
+          <div class="w-14 h-14 mx-auto rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-brand-400 text-xl group-hover:scale-110 group-hover:border-brand-400 transition mb-3">
+            <i class="fa-solid fa-industry"></i>
+          </div>
+          <h4 class="text-xs sm:text-sm font-bold text-white group-hover:text-brand-300 transition">
+            {ind['short_title']}
+          </h4>
+          <span class="text-[10px] text-slate-400 font-mono block mt-1">Explore Spares &rarr;</span>
+        </div>
+        ''' for ind in industries_data])}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 4-STEP SOURCING PROCESS -->
+  <section id="process" class="py-16 bg-slatebg-900 border-b border-slate-800">
+    <div class="container-fluid">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-mono uppercase text-brand-400 tracking-widest">HOW WE OPERATE</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-2">
+          From Requirement to Quotation
+        </h2>
+        <p class="text-slate-400 text-sm mt-2">
+          Four straightforward steps for an accurate, specification-matched purchase enquiry.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="glass-card rounded-2xl p-6 relative">
+          <div class="text-3xl font-black font-mono text-brand-400 mb-3">01</div>
+          <h4 class="text-base font-bold text-white">Share Requirement</h4>
+          <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+            Provide part number, dimensions, brand preference, quantity, and machinery application.
+          </p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 relative">
+          <div class="text-3xl font-black font-mono text-sky-400 mb-3">02</div>
+          <h4 class="text-base font-bold text-white">Review Specs</h4>
+          <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+            Our trade desk verifies dimensions, load capacities, tooth pitch, and compatibility.
+          </p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 relative">
+          <div class="text-3xl font-black font-mono text-emerald-400 mb-3">03</div>
+          <h4 class="text-base font-bold text-white">Get Quotation</h4>
+          <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+            Receive clear commercial terms, wholesale price, applicable taxes, and dispatch schedule.
+          </p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 relative">
+          <div class="text-3xl font-black font-mono text-indigo-400 mb-3">04</div>
+          <h4 class="text-base font-bold text-white">Confirm Order</h4>
+          <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+            Authorize procurement with zero ambiguity and fast Mumbai dispatch to your site.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INTERACTIVE RFQ & QUOTE BUILDER -->
+  <section id="quick-rfq" class="py-16 bg-slatebg-950 border-b border-slate-800 relative">
+    <div class="container-fluid">
+      <div class="max-w-4xl mx-auto glass-card rounded-3xl p-6 sm:p-10 border border-brand-500/30 shadow-2xl">
+        
+        <div class="text-center space-y-2 mb-8">
+          <span class="text-xs font-mono uppercase text-emerald-400 tracking-wider">INSTANT RFQ SYSTEM</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white">
+            Request B2B Quote / WhatsApp RFQ
+          </h2>
+          <p class="text-slate-400 text-xs sm:text-sm">
+            Fill your specifications below. Your request will be structured into a clean purchase RFQ.
+          </p>
+        </div>
+
+        <form @submit.prevent="generateWhatsAppRFQ()" class="space-y-4 text-sm">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-mono text-slate-300 mb-1">YOUR NAME / COMPANY</label>
+              <input type="text" x-model="rfq.name" required placeholder="e.g. Rahul Sharma / Apex Engineering" class="w-full bg-slatebg-900 border border-slate-700 rounded-xl px-4 py-2.5 text-white placeholder-slate-500 focus:border-brand-400 outline-none" />
+            </div>
+            <div>
+              <label class="block text-xs font-mono text-slate-300 mb-1">PHONE / WHATSAPP NUMBER</label>
+              <input type="text" x-model="rfq.phone" required placeholder="e.g. +91 98765 43210" class="w-full bg-slatebg-900 border border-slate-700 rounded-xl px-4 py-2.5 text-white placeholder-slate-500 focus:border-brand-400 outline-none" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-mono text-slate-300 mb-1">PRODUCT CATEGORY</label>
+              <select x-model="rfq.category" class="w-full bg-slatebg-900 border border-slate-700 rounded-xl px-4 py-2.5 text-white focus:border-brand-400 outline-none">
+                <option value="Ball Bearings">Ball Bearings</option>
+                <option value="Timing Belts">Timing Belts (Mitsuboshi / Conti / Gates)</option>
+                <option value="Conveyor Belts">Conveyor Belts</option>
+                <option value="Linear Motion Guides">Linear Motion Guides & Blocks</option>
+                <option value="Pillow Block Bearings">Pillow Block Bearings</option>
+                <option value="Industrial Greases & Oils">Industrial Greases & Oils</option>
+                <option value="Seals & O-Rings">Seals & O-Rings</option>
+                <option value="Cots & Aprons / Rubber Emery">Cots & Aprons / Rubber Emery</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-mono text-slate-300 mb-1">QUANTITY REQUIRED</label>
+              <input type="text" x-model="rfq.quantity" placeholder="e.g. 50 Pcs / 100 Meters / Bulk" class="w-full bg-slatebg-900 border border-slate-700 rounded-xl px-4 py-2.5 text-white placeholder-slate-500 focus:border-brand-400 outline-none" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-mono text-slate-300 mb-1">PART NUMBER / DIMENSIONS / APPLICATION SPECS</label>
+            <textarea x-model="rfq.specs" rows="3" required placeholder="Enter Exact Part No. (e.g. 6205-2RS, 8M-1200-50, etc.) or Shaft size, brand preference..." class="w-full bg-slatebg-900 border border-slate-700 rounded-xl px-4 py-2.5 text-white placeholder-slate-500 focus:border-brand-400 outline-none"></textarea>
+          </div>
+
+          <div class="pt-2">
+            <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white rounded-xl font-bold uppercase tracking-wider text-sm shadow-xl shadow-emerald-900/40 flex items-center justify-center gap-3 transition">
+              <i class="fa-brands fa-whatsapp text-xl"></i> Submit RFQ to WhatsApp
+            </button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT BELUBEARI EXIM & TRUST -->
+  <section id="about" class="py-16 bg-slatebg-900 border-b border-slate-800">
+    <div class="container-fluid">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <div class="lg:col-span-6 space-y-5">
+          <span class="text-xs font-mono uppercase text-brand-400 tracking-widest">ABOUT THE BUSINESS</span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white">
+            M/s Belubeari Exim
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            A Mumbai-based industrial trader, wholesaler, and distributor specializing in power transmission systems, high-speed bearings, linear motion rails, and engineered conveyor parts.
+          </p>
+          <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+            Operating from the heart of Mumbai's commercial industrial trade district at Masjid Bunder, we connect machinery manufacturers, process plants, and maintenance engineers with verified, specification-grade components.
+          </p>
+
+          <div class="grid grid-cols-2 gap-4 pt-2">
+            <div class="p-4 rounded-xl bg-slatebg-950 border border-slate-800">
+              <i class="fa-solid fa-microchip text-brand-400 text-xl mb-2"></i>
+              <h5 class="text-sm font-bold text-white">Specification-Led</h5>
+              <p class="text-[11px] text-slate-400 mt-1">Exact part number & dimensional fitment verification.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slatebg-950 border border-slate-800">
+              <i class="fa-solid fa-truck-fast text-emerald-400 text-xl mb-2"></i>
+              <h5 class="text-sm font-bold text-white">Mumbai Trade Desk</h5>
+              <p class="text-[11px] text-slate-400 mt-1">Yusuf Meherali Road, Masjid Bunder, Mumbai 400003.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6">
+          <div class="glass-card rounded-2xl p-6 border border-slate-800 space-y-4">
+            <h4 class="text-base font-bold text-white flex items-center gap-2">
+              <i class="fa-solid fa-circle-question text-brand-400"></i> Frequent Questions (FAQs)
+            </h4>
+
+            <div class="space-y-2 text-xs">
+              <div class="p-3 rounded-lg bg-slatebg-950 border border-slate-800">
+                <div class="font-bold text-slate-200">Can I request bulk or wholesale pricing?</div>
+                <div class="text-slate-400 mt-1">Yes. Share your required quantity and delivery location for tiered wholesale rates.</div>
+              </div>
+              <div class="p-3 rounded-lg bg-slatebg-950 border border-slate-800">
+                <div class="font-bold text-slate-200">What details should I provide in my RFQ?</div>
+                <div class="text-slate-400 mt-1">Part number, brand preference, dimensions, machinery application, and quantity.</div>
+              </div>
+              <div class="p-3 rounded-lg bg-slatebg-950 border border-slate-800">
+                <div class="font-bold text-slate-200">Are products available for immediate dispatch?</div>
+                <div class="text-slate-400 mt-1">We maintain stock for standard bearing and belt profiles at our Mumbai trade location.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT & MASJID BUNDER MAP SECTION -->
+  <section id="contact" class="py-16 bg-slatebg-950 border-b border-slate-800">
+    <div class="container-fluid">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        
+        <div class="lg:col-span-5 space-y-6">
+          <div>
+            <span class="text-xs font-mono uppercase text-brand-400 tracking-widest">FIND OUR TRADE DESK</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">
+              Masjid Bunder, Mumbai
+            </h2>
+          </div>
+
+          <div class="space-y-4 text-xs">
+            <div class="flex items-start gap-3 p-4 rounded-xl bg-slatebg-900 border border-slate-800">
+              <i class="fa-solid fa-building text-brand-400 text-lg mt-0.5"></i>
+              <div>
+                <div class="font-bold text-white">Registered Business Address</div>
+                <div class="text-slate-400 mt-0.5">Flat No. 8, 261/63 Yusuf Meherali Road, Masjid Bunder, Mumbai – 400003, Maharashtra, India.</div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 p-4 rounded-xl bg-slatebg-900 border border-slate-800">
+              <i class="fa-brands fa-whatsapp text-emerald-400 text-lg mt-0.5"></i>
+              <div>
+                <div class="font-bold text-white">WhatsApp Sourcing Desk</div>
+                <div class="text-slate-400 mt-0.5">Instant technical RFQ & Part specification matching</div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 p-4 rounded-xl bg-slatebg-900 border border-slate-800">
+              <i class="fa-solid fa-clock text-sky-400 text-lg mt-0.5"></i>
+              <div>
+                <div class="font-bold text-white">Trade Working Hours</div>
+                <div class="text-slate-400 mt-0.5">Monday – Saturday : 10:00 AM – 7:30 PM (IST)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div class="h-80 w-full rounded-2xl overflow-hidden border border-slate-800 relative bg-slate-900 flex items-center justify-center">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.493019808388!2d72.8335048!3d18.9538356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce3c96570c97%3A0xe5452fec55359a33!2sYusuf%20Meher%20Ali%20Rd%2C%20Masjid%20Bandar%2C%20Mumbai%2C%20Maharashtra%20400003!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+              width="100%" 
+              height="100%" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              class="w-full h-full grayscale contrast-125 opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-500">
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slatebg-950 text-slate-400 py-12 text-xs border-t border-slate-800">
+    <div class="container-fluid space-y-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Col 1 -->
+        <div class="space-y-3">
+          <div class="text-base font-black text-white uppercase tracking-wider">
+            BELUBEARI <span class="text-brand-400">EXIM</span>
+          </div>
+          <p class="text-slate-400 leading-relaxed">
+            Premier B2B distributor for industrial power transmission belts, bearings, linear motion guides, and mechanical components.
+          </p>
+          <div class="text-[11px] font-mono text-slate-500">
+            Flat No. 8, Yusuf Meherali Road, Masjid Bunder, Mumbai 400003
+          </div>
+        </div>
+
+        <!-- Col 2 -->
+        <div class="space-y-2">
+          <div class="font-bold text-white uppercase font-mono tracking-wider">Products</div>
+          <ul class="space-y-1 text-slate-400">
+            <li><a href="#products" class="hover:text-brand-300">Ball & Roller Bearings</a></li>
+            <li><a href="#products" class="hover:text-brand-300">Timing & Transmission Belts</a></li>
+            <li><a href="#products" class="hover:text-brand-300">Conveyor Spares & Belts</a></li>
+            <li><a href="#products" class="hover:text-brand-300">Linear Motion Guides</a></li>
+            <li><a href="#products" class="hover:text-brand-300">Industrial Grease & Oil</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3 -->
+        <div class="space-y-2">
+          <div class="font-bold text-white uppercase font-mono tracking-wider">Industries</div>
+          <ul class="space-y-1 text-slate-400">
+            <li><a href="#industries" class="hover:text-brand-300">Textile & Garments</a></li>
+            <li><a href="#industries" class="hover:text-brand-300">Cement & Heavy Plants</a></li>
+            <li><a href="#industries" class="hover:text-brand-300">Chemical & Pharma</a></li>
+            <li><a href="#industries" class="hover:text-brand-300">Automotive & Automation</a></li>
+            <li><a href="#industries" class="hover:text-brand-300">Mining & Metalworking</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4 -->
+        <div class="space-y-3">
+          <div class="font-bold text-white uppercase font-mono tracking-wider">Direct RFQ Desk</div>
+          <p class="text-slate-400">Send drawings or part numbers via WhatsApp for prompt quote.</p>
+          <a href="https://wa.me/919820000000?text=Hi%20Belubeari%20Exim,%20I%20have%20an%20enquiry" target="_blank" class="inline-flex items-center gap-2 px-3 py-2 bg-emerald-700 hover:bg-emerald-600 text-white rounded-lg font-bold">
+            <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="pt-6 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500 font-mono text-[11px]">
+        <div>
+          © 2026 M/s Belubeari Exim. All rights reserved. B2B Trade & Sourcing.
+        </div>
+        <div class="flex items-center gap-4">
+          <span>Masjid Bunder, Mumbai, India</span>
+          <span>•</span>
+          <a href="#home" class="hover:text-brand-400">Back to top &uarr;</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/919820000000?text=Hello%20Belubeari%20Exim,%20I%20need%20a%20quote%20for%20industrial%20parts." target="_blank" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-emerald-500 text-white flex items-center justify-center text-3xl shadow-2xl shadow-emerald-500/50 hover:scale-110 active:scale-95 transition group">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="absolute right-16 bg-slatebg-950 text-white text-xs font-semibold px-3 py-1.5 rounded-lg whitespace-nowrap shadow-xl border border-slate-800 opacity-0 group-hover:opacity-100 transition duration-300 pointer-events-none">
+      WhatsApp RFQ Desk
+    </span>
+  </a>
+
+  <!-- PRODUCT SPECS MODAL -->
+  <div x-show="modalOpen" x-transition.opacity class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4" style="display: none;">
+    <div @click.outside="modalOpen = false" class="bg-slatebg-950 border border-slate-700 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 space-y-6">
+      
+      <div class="flex items-start justify-between border-b border-slate-800 pb-4">
+        <div>
+          <span class="text-[10px] font-mono text-brand-400 uppercase tracking-widest">TECHNICAL SPECIFICATIONS</span>
+          <h3 class="text-xl font-bold text-white mt-1" x-text="modalTitle"></h3>
+        </div>
+        <button @click="modalOpen = false" class="text-slate-400 hover:text-white text-xl">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
+        <div class="rounded-xl overflow-hidden bg-slate-900 border border-slate-800 h-48">
+          <img :src="modalImage" alt="Product Specification" class="w-full h-full object-cover" />
+        </div>
+        <div class="space-y-2 text-xs">
+          <div class="p-2.5 rounded bg-slatebg-900 border border-slate-800">
+            <span class="text-slate-400 block">Sourcing Mode:</span>
+            <span class="text-white font-semibold">Wholesale B2B & Supply Desk</span>
+          </div>
+          <div class="p-2.5 rounded bg-slatebg-900 border border-slate-800">
+            <span class="text-slate-400 block">Quality Standard:</span>
+            <span class="text-emerald-400 font-semibold">ISO 9001 / DIN Standard Tested</span>
+          </div>
+          <div class="p-2.5 rounded bg-slatebg-900 border border-slate-800">
+            <span class="text-slate-400 block">Trade Location:</span>
+            <span class="text-slate-200 font-semibold">Masjid Bunder, Mumbai</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-2">
+        <h4 class="text-xs font-mono uppercase text-slate-400">Overview & Compatibility</h4>
+        <p class="text-xs text-slate-300 leading-relaxed" x-text="modalSummary"></p>
+      </div>
+
+      <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-4">
+        <button @click="modalOpen = false" class="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl text-xs font-semibold">
+          Close
+        </button>
+        <a :href="'https://wa.me/919820000000?text=Hi%20Belubeari%20Exim,%20I%20need%20a%20quote%20for%20' + encodeURIComponent(modalTitle)" target="_blank" class="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold flex items-center gap-2">
+          <i class="fa-brands fa-whatsapp text-sm"></i> Request Quote on WhatsApp
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function belubeariApp() {{
+      return {{
+        searchQuery: '',
+        activeCat: 'all',
+        mobileMenu: false,
+        modalOpen: false,
+        modalTitle: '',
+        modalSummary: '',
+        modalImage: '',
+        rfq: {{
+          name: '',
+          phone: '',
+          category: 'Ball Bearings',
+          quantity: '',
+          specs: ''
+        }},
+        openProductModal(title, summary, image) {{
+          this.modalTitle = title;
+          this.modalSummary = summary;
+          this.modalImage = image;
+          this.modalOpen = true;
+        }},
+        openIndustryModal(title, summary, image) {{
+          this.modalTitle = title + ' - Component Solutions';
+          this.modalSummary = summary;
+          this.modalImage = image;
+          this.modalOpen = true;
+        }},
+        generateWhatsAppRFQ() {{
+          const msg = `*NEW INDUSTRIAL B2B RFQ - BELUBEARI EXIM*%0A` +
+                      `----------------------------%0A` +
+                      `*Name/Company:* ${{encodeURIComponent(this.rfq.name)}}%0A` +
+                      `*Phone:* ${{encodeURIComponent(this.rfq.phone)}}%0A` +
+                      `*Category:* ${{encodeURIComponent(this.rfq.category)}}%0A` +
+                      `*Quantity:* ${{encodeURIComponent(this.rfq.quantity || 'As quoted')}}%0A` +
+                      `*Part Specs:* ${{encodeURIComponent(this.rfq.specs)}}%0A` +
+                      `----------------------------%0A` +
+                      `_Please confirm availability, price, and dispatch time._`;
+          window.open(`https://wa.me/919820000000?text=${{msg}}`, '_blank');
+        }}
+      }}
+    }}
+  </script>
+
+</body>
+</html>
+"""
+
+with open('index.html', 'w', encoding='utf-8') as f:
+    f.write(html_content)
+
+print('Successfully generated index.html in New folder (8)!')
