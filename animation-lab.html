@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Hero Animation Studio & FX Lab | M/s Belubeari Exim Industrial Solutions</title>
+  <meta name="description" content="Interactive Animation Studio to test and preview 14+ cinematic hero transitions and visual effects for Belubeari Exim.">
+  <link rel="icon" href="assets/images/logo.png" type="image/png">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#0284c7',
+              dark: '#0369a1',
+              light: '#38bdf8'
+            },
+            corp: {
+              900: '#0b1324',
+              950: '#070c18'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #070c18;
+      color: #f1f5f9;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ==========================================================================
+       ANIMATION DEFINITIONS (14 DISTINCT CINEMATIC STYLES)
+       ========================================================================== */
+
+    /* 1. Blur to Sharp (Camera Lens Focus) */
+    @keyframes anim-blur-sharp {
+      0% { filter: blur(16px); opacity: 0; transform: scale(1.08); }
+      100% { filter: blur(0px); opacity: 1; transform: scale(1); }
+    }
+    .anim-blur-sharp { animation: anim-blur-sharp var(--anim-speed, 0.85s) cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+    /* 2. Perspective 3D Tilt (Linear/Tesla) */
+    @keyframes anim-perspective-3d {
+      0% { opacity: 0; transform: perspective(1000px) rotateY(-18deg) rotateX(10deg) scale(0.9) translateY(20px); }
+      100% { opacity: 1; transform: perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1) translateY(0); }
+    }
+    .anim-perspective-3d { animation: anim-perspective-3d var(--anim-speed, 0.9s) cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+    /* 3. Clip Reveal (Diagonal Laser Mask) */
+    @keyframes anim-clip-reveal {
+      0% { opacity: 0; clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%); transform: scale(1.05); }
+      100% { opacity: 1; clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); transform: scale(1); }
+    }
+    .anim-clip-reveal { animation: anim-clip-reveal var(--anim-speed, 0.85s) cubic-bezier(0.77, 0, 0.175, 1) forwards; }
+
+    /* 4. Zoom Out (Ken-Burns Luxury Flow) */
+    @keyframes anim-zoom-out {
+      0% { opacity: 0; transform: scale(1.22); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    .anim-zoom-out { animation: anim-zoom-out var(--anim-speed, 0.95s) cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+    /* 5. Scale In (Pop Expansion) */
+    @keyframes anim-scale-in {
+      0% { opacity: 0; transform: scale(0.82); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    .anim-scale-in { animation: anim-scale-in var(--anim-speed, 0.75s) cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+
+    /* 6. Slide Left to Right (Panoramic In) */
+    @keyframes anim-slide-left {
+      0% { opacity: 0; transform: translateX(-100%) scale(0.96); }
+      100% { opacity: 1; transform: translateX(0) scale(1); }
+    }
+    .anim-slide-left { animation: anim-slide-left var(--anim-speed, 0.8s) cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+    /* 7. Slide Right to Left */
+    @keyframes anim-slide-right {
+      0% { opacity: 0; transform: translateX(100%) scale(0.96); }
+      100% { opacity: 1; transform: translateX(0) scale(1); }
+    }
+    .anim-slide-right { animation: anim-slide-right var(--anim-speed, 0.8s) cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+    /* 8. Slide Up (Bottom to Top) */
+    @keyframes anim-slide-up {
+      0% { opacity: 0; transform: translateY(60px) scale(0.96); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .anim-slide-up { animation: anim-slide-up var(--anim-speed, 0.85s) cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+    /* 9. Wipe Reveal (Vertical Center Split Curtain) */
+    @keyframes anim-wipe-curtain {
+      0% { opacity: 0; clip-path: inset(50% 0 50% 0); }
+      100% { opacity: 1; clip-path: inset(0 0 0 0); }
+    }
+    .anim-wipe-curtain { animation: anim-wipe-curtain var(--anim-speed, 0.8s) cubic-bezier(0.25, 1, 0.5, 1) forwards; }
+
+    /* 10. Rotate + Scale (Centrifugal Machinery Settle) */
+    @keyframes anim-rotate-scale {
+      0% { opacity: 0; transform: rotate(-5deg) scale(0.88); }
+      100% { opacity: 1; transform: rotate(0deg) scale(1); }
+    }
+    .anim-rotate-scale { animation: anim-rotate-scale var(--anim-speed, 0.85s) cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+    /* 11. Circular Iris / Aperture Mask */
+    @keyframes anim-iris-aperture {
+      0% { opacity: 0; clip-path: circle(0% at 50% 50%); transform: scale(1.1); }
+      100% { opacity: 1; clip-path: circle(100% at 50% 50%); transform: scale(1); }
+    }
+    .anim-iris-aperture { animation: anim-iris-aperture var(--anim-speed, 0.9s) cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+    /* 12. Flip 3D Vertical */
+    @keyframes anim-flip-3d {
+      0% { opacity: 0; transform: perspective(800px) rotateX(90deg); }
+      100% { opacity: 1; transform: perspective(800px) rotateX(0deg); }
+    }
+    .anim-flip-3d { animation: anim-flip-3d var(--anim-speed, 0.85s) cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+    /* 13. Glitch Cyber Hologram */
+    @keyframes anim-glitch-settle {
+      0% { opacity: 0; transform: translateX(-15px) skewX(12deg); filter: hue-rotate(90deg) contrast(150%); }
+      30% { opacity: 0.8; transform: translateX(10px) skewX(-8deg); filter: hue-rotate(-60deg); }
+      60% { opacity: 0.9; transform: translateX(-4px) skewX(2deg); filter: hue-rotate(0deg); }
+      100% { opacity: 1; transform: translateX(0) skewX(0deg); filter: none; }
+    }
+    .anim-glitch-settle { animation: anim-glitch-settle var(--anim-speed, 0.65s) ease-out forwards; }
+
+    /* 14. Soft Ambient Fade In */
+    @keyframes anim-fade-in {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    .anim-fade-in { animation: anim-fade-in var(--anim-speed, 0.8s) ease-in-out forwards; }
+
+    /* Glowing active button border */
+    .active-fx-btn {
+      background: linear-gradient(135deg, #0284c7, #0369a1) !important;
+      border-color: #38bdf8 !important;
+      color: #ffffff !important;
+      box-shadow: 0 0 16px rgba(56, 189, 248, 0.45);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased">
+
+  <!-- TOP BAR -->
+  <header class="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-xl border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="flex items-center gap-2">
+          <img src="assets/images/logo.png" alt="Logo" class="h-9 w-auto">
+        </a>
+        <div class="hidden sm:block border-l border-slate-700 pl-3">
+          <span class="text-xs font-bold uppercase tracking-wider text-sky-400">Hero Animation & FX Studio</span>
+          <p class="text-[11px] text-slate-400">Interactive Visual Effects Lab</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-bold uppercase tracking-wider text-slate-200 border border-slate-700 transition flex items-center gap-1.5">
+          <i class="fa-solid fa-arrow-left"></i> Back to Main Site
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN WRAPPER -->
+  <main class="flex-1 max-w-7xl mx-auto px-4 py-8 space-y-10 w-full">
+
+    <!-- HERO SIMULATOR STAGE -->
+    <section class="space-y-4">
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <div>
+          <span class="px-3 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-widest bg-sky-500/10 text-sky-400 border border-sky-400/30">
+            Live Interactive Simulator
+          </span>
+          <h1 class="text-2xl sm:text-3xl font-black uppercase text-white mt-1">
+            Hero Animation <span class="text-sky-400">Master Lab</span>
+          </h1>
+          <p class="text-xs sm:text-sm text-slate-400 mt-0.5">Click any animation button below to immediately test the transition on the live hero banner.</p>
+        </div>
+
+        <!-- Controls: Replay & Speed -->
+        <div class="flex flex-wrap items-center gap-2">
+          <button id="btn-replay-main" onclick="triggerAnimation()" class="px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-black text-xs uppercase tracking-wider shadow-lg hover:shadow-sky-500/25 transition flex items-center gap-2">
+            <i class="fa-solid fa-rotate-right"></i> Replay FX
+          </button>
+          <div class="bg-slate-900 border border-slate-800 rounded-xl p-1 flex items-center gap-1 text-xs">
+            <span class="text-slate-400 px-2 text-[11px] font-mono font-bold">Speed:</span>
+            <button onclick="setSpeed('0.5s', this)" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] font-mono">0.5s</button>
+            <button onclick="setSpeed('0.85s', this)" class="px-2 py-1 rounded bg-sky-600 text-white text-[11px] font-mono font-bold">0.85s (Default)</button>
+            <button onclick="setSpeed('1.4s', this)" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] font-mono">1.4s</button>
+            <button onclick="setSpeed('2.0s', this)" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] font-mono">2.0s Slow</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- LIVE PREVIEW CANVAS STAGE -->
+      <div class="relative w-full aspect-[16/9] sm:aspect-[21/9] md:aspect-[2.4/1] rounded-2xl overflow-hidden bg-slate-950 border-2 border-slate-800 shadow-2xl flex items-center justify-center group">
+        
+        <!-- Live Animated Image -->
+        <img id="main-stage-img" src="assets/covers/cover_1.png" alt="Hero Stage Banner" class="w-full h-full object-contain sm:object-cover anim-blur-sharp">
+
+        <!-- Watermark / Current Active FX Pill -->
+        <div class="absolute top-4 left-4 z-20 px-3.5 py-1.5 rounded-full bg-slate-950/85 backdrop-blur-md border border-slate-700 text-xs font-mono font-bold text-sky-400 flex items-center gap-2 shadow-lg">
+          <span class="w-2 h-2 rounded-full bg-sky-400 animate-ping"></span>
+          Active Effect: <span id="active-fx-label" class="text-white font-sans font-bold">Blur → Sharp (Lens Focus)</span>
+        </div>
+
+        <!-- Image Selector Pill Bar (Bottom Right) -->
+        <div class="absolute bottom-4 right-4 z-20 flex items-center gap-1.5 bg-slate-950/80 backdrop-blur-md p-1.5 rounded-xl border border-slate-700">
+          <span class="text-[10px] uppercase font-bold text-slate-400 px-2 hidden sm:inline">Switch Cover:</span>
+          <button onclick="changeCover('assets/covers/cover_1.png', 1)" class="w-7 h-7 rounded-lg bg-sky-600 text-white font-bold text-xs">1</button>
+          <button onclick="changeCover('assets/covers/cover_2.png', 2)" class="w-7 h-7 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs">2</button>
+          <button onclick="changeCover('assets/covers/cover_3.png', 3)" class="w-7 h-7 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs">3</button>
+          <button onclick="changeCover('assets/covers/cover_4.png', 4)" class="w-7 h-7 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs">4</button>
+          <button onclick="changeCover('assets/covers/cover_5.png', 5)" class="w-7 h-7 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs">5</button>
+        </div>
+      </div>
+
+      <!-- ANIMATION SELECTOR BUTTONS (14 STYLES) -->
+      <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-4 sm:p-6 space-y-3">
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">
+          Choose Animation Style to Test on Stage:
+        </h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-2.5">
+          
+          <button onclick="applyFx('anim-blur-sharp', 'Blur → Sharp (Lens Focus)', this)" class="fx-btn active-fx-btn p-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-bold text-left transition flex flex-col justify-between h-20">
+            <span class="flex items-center justify-between w-full">
+              <i class="fa-solid fa-camera text-sky-400 text-sm"></i>
+              <span class="text-[9px] px-1.5 py-0.5 rounded bg-sky-500/20 text-sky-300 font-mono">#1 Best</span>
+            </span>
+            <span>Blur → Sharp</span>
+          </button>
+
+          <button onclick="applyFx('anim-perspective-3d', 'Perspective 3D (Linear Depth)', this)" class="fx-btn p-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-bold text-left transition flex flex-col justify-between h-20">
+            <span class="flex items-center justify-between w-full">
+              <i class="fa-solid fa-cube text-sky-400 text-sm"></i>
+              <span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono">#2 Best</span>
+            </span>
+            <span>Perspective 3D</span>
+          </button>
+
+          <button onclick="applyFx('anim-clip-reveal', 'Clip Reveal (Laser Mask)', this)" class="fx-btn p-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-bold text-left transition flex flex-col justify-between h-20">
+            <span class="flex items-center justify-between w-full">
+              <i class="fa-solid fa-crop-simple text-sky-400 text-sm"></i>
+              <span class="text-[9px] px-1.5 py-0.5 rounded bg-purple-500/20 text-purple-300 font-mono">#3 Best</span>
+            </span>
+            <span>Clip Reveal</span>
+          </button>
+
+          <button onclick="applyFx('anim-zoom-out', 'Zoom Out (Ken Burns)', this)" class="fx-btn p-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-bold text-left transition flex flex-col justify-between h-20">
+            <i class="fa-solid fa-magnifying-glass-minus text-sky-400 text-sm"></i>
+            <span>Zoom Out</span>
+          </button>
+
+          <button onclick="applyFx('anim-scale-in', 'Scale In (Pop In)', this)" class="fx-btn p-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-bold text-left transition flex flex-col justify-between h-20">
+            <i class="fa-solid fa-expand text-sky-400 text-sm"></i>
+            <span>Scale In</span>
+          </button>
+
+          <button onclick="applyFx('anim-slide-left', 'Slide Left (Side In)', this)" class="fx-btn p-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-bold text-left transition flex flex-col justify-between h-20">
+            <i class="fa-solid fa-arrow-right-to-bracket text-sky-400 text-sm"></i>
+            <span>Slide Left</span>
+          </button>
+
+          <button onclick="applyFx('anim-slide-right', 'Slide Right (Side In)', this)" class="fx-btn p-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-bold text-left transition flex flex-col justify-between h-20">
+            <i class="fa-solid fa-arrow-left text-sky-400 text-sm"></i>
+            <span>Slide Right</span>
+          </button>
+
+          <button onclick="applyFx('anim-slide-up', 'Slide Up (Bottom to Top)', this)" class="fx-btn p-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-bold text-left transition flex flex-col justify-between h-20">
+            <i class="fa-solid fa-arrow-up text-sky-400 text-sm"></i>
+            <span>Slide Up</span>
+          </button>
+
+          <button onclick="applyFx('anim-wipe-curtain', 'Wipe Reveal (Curtain)', this)" class="fx-btn p-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-bold text-left transition flex flex-col justify-between h-20">
+            <i class="fa-solid fa-grip-lines text-sky-400 text-sm"></i>
+            <span>Wipe Reveal</span>
+          </button>
+
+          <button onclick="applyFx('anim-rotate-scale', 'Rotate + Scale', this)" class="fx-btn p-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-bold text-left transition flex flex-col justify-between h-20">
+            <i class="fa-solid fa-rotate text-sky-400 text-sm"></i>
+            <span>Rotate + Settle</span>
+          </button>
+
+          <button onclick="applyFx('anim-iris-aperture', 'Iris Circular Mask', this)" class="fx-btn p-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-bold text-left transition flex flex-col justify-between h-20">
+            <i class="fa-solid fa-circle-dot text-sky-400 text-sm"></i>
+            <span>Iris Mask</span>
+          </button>
+
+          <button onclick="applyFx('anim-flip-3d', 'Flip 3D Vertical', this)" class="fx-btn p-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-bold text-left transition flex flex-col justify-between h-20">
+            <i class="fa-solid fa-arrows-spin text-sky-400 text-sm"></i>
+            <span>Flip 3D</span>
+          </button>
+
+          <button onclick="applyFx('anim-glitch-settle', 'Glitch Cyber Settle', this)" class="fx-btn p-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-bold text-left transition flex flex-col justify-between h-20">
+            <i class="fa-solid fa-bolt text-yellow-400 text-sm"></i>
+            <span>Glitch Cyber</span>
+          </button>
+
+          <button onclick="applyFx('anim-fade-in', 'Soft Fade In', this)" class="fx-btn p-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-bold text-left transition flex flex-col justify-between h-20">
+            <i class="fa-solid fa-eye text-sky-400 text-sm"></i>
+            <span>Fade In</span>
+          </button>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SIDE-BY-SIDE ALL-ANIMATIONS COMPARISON GALLERY -->
+    <section class="space-y-6 pt-6 border-t border-slate-800">
+      <div>
+        <span class="px-3 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-widest bg-emerald-500/10 text-emerald-400 border border-emerald-400/30">
+          Side-By-Side Visual Showcase
+        </span>
+        <h2 class="text-xl sm:text-2xl font-black uppercase text-white mt-1">
+          Compare All 14 Animation Styles Simultaneously
+        </h2>
+        <p class="text-xs text-slate-400 mt-0.5">Click "Replay" on any individual card or use "Replay All" to see how each transition performs.</p>
+      </div>
+
+      <div class="flex justify-end">
+        <button onclick="replayAllCards()" class="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs uppercase tracking-wider shadow-lg flex items-center gap-1.5 transition">
+          <i class="fa-solid fa-play"></i> Replay All Cards
+        </button>
+      </div>
+
+      <!-- 14 Live Cards Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <!-- Card 1: Blur to Sharp -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 space-y-3 shadow-xl">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold uppercase text-sky-400 font-mono">01. Blur → Sharp</span>
+            <button onclick="replayCard('card-img-1', 'anim-blur-sharp')" class="text-[11px] px-2.5 py-1 rounded bg-slate-800 hover:bg-sky-600 text-white font-bold transition">
+              <i class="fa-solid fa-rotate-right"></i> Replay
+            </button>
+          </div>
+          <div class="aspect-[16/9] rounded-xl overflow-hidden bg-slate-950 border border-slate-800 flex items-center justify-center">
+            <img id="card-img-1" src="assets/covers/cover_1.png" alt="Blur Sharp" class="w-full h-full object-contain anim-blur-sharp">
+          </div>
+          <p class="text-[11px] text-slate-400 leading-relaxed">Starts with 16px blur and 1.08 scale, smoothly focusing to ultra-crisp clarity.</p>
+        </div>
+
+        <!-- Card 2: Perspective 3D -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 space-y-3 shadow-xl">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold uppercase text-emerald-400 font-mono">02. Perspective 3D</span>
+            <button onclick="replayCard('card-img-2', 'anim-perspective-3d')" class="text-[11px] px-2.5 py-1 rounded bg-slate-800 hover:bg-emerald-600 text-white font-bold transition">
+              <i class="fa-solid fa-rotate-right"></i> Replay
+            </button>
+          </div>
+          <div class="aspect-[16/9] rounded-xl overflow-hidden bg-slate-950 border border-slate-800 flex items-center justify-center">
+            <img id="card-img-2" src="assets/covers/cover_2.png" alt="Perspective 3D" class="w-full h-full object-contain anim-perspective-3d">
+          </div>
+          <p class="text-[11px] text-slate-400 leading-relaxed">3D rotation angle with perspective depth that settles forward seamlessly.</p>
+        </div>
+
+        <!-- Card 3: Clip Reveal -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 space-y-3 shadow-xl">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold uppercase text-purple-400 font-mono">03. Clip Reveal (Laser)</span>
+            <button onclick="replayCard('card-img-3', 'anim-clip-reveal')" class="text-[11px] px-2.5 py-1 rounded bg-slate-800 hover:bg-purple-600 text-white font-bold transition">
+              <i class="fa-solid fa-rotate-right"></i> Replay
+            </button>
+          </div>
+          <div class="aspect-[16/9] rounded-xl overflow-hidden bg-slate-950 border border-slate-800 flex items-center justify-center">
+            <img id="card-img-3" src="assets/covers/cover_3.png" alt="Clip Reveal" class="w-full h-full object-contain anim-clip-reveal">
+          </div>
+          <p class="text-[11px] text-slate-400 leading-relaxed">Geometric polygon mask sweeps from left to right like a laser cut uncover.</p>
+        </div>
+
+        <!-- Card 4: Zoom Out (Ken-Burns) -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 space-y-3 shadow-xl">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold uppercase text-sky-400 font-mono">04. Zoom Out (Ken Burns)</span>
+            <button onclick="replayCard('card-img-4', 'anim-zoom-out')" class="text-[11px] px-2.5 py-1 rounded bg-slate-800 hover:bg-sky-600 text-white font-bold transition">
+              <i class="fa-solid fa-rotate-right"></i> Replay
+            </button>
+          </div>
+          <div class="aspect-[16/9] rounded-xl overflow-hidden bg-slate-950 border border-slate-800 flex items-center justify-center">
+            <img id="card-img-4" src="assets/covers/cover_4.png" alt="Zoom Out" class="w-full h-full object-contain anim-zoom-out">
+          </div>
+          <p class="text-[11px] text-slate-400 leading-relaxed">Slow cinematic deceleration from 1.22x scale down to 1.0x.</p>
+        </div>
+
+        <!-- Card 5: Scale In -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 space-y-3 shadow-xl">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold uppercase text-sky-400 font-mono">05. Scale In</span>
+            <button onclick="replayCard('card-img-5', 'anim-scale-in')" class="text-[11px] px-2.5 py-1 rounded bg-slate-800 hover:bg-sky-600 text-white font-bold transition">
+              <i class="fa-solid fa-rotate-right"></i> Replay
+            </button>
+          </div>
+          <div class="aspect-[16/9] rounded-xl overflow-hidden bg-slate-950 border border-slate-800 flex items-center justify-center">
+            <img id="card-img-5" src="assets/covers/cover_5.png" alt="Scale In" class="w-full h-full object-contain anim-scale-in">
+          </div>
+          <p class="text-[11px] text-slate-400 leading-relaxed">Starts compressed at 0.82x and springs outward to full size.</p>
+        </div>
+
+        <!-- Card 6: Slide Left -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 space-y-3 shadow-xl">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold uppercase text-sky-400 font-mono">06. Slide Left</span>
+            <button onclick="replayCard('card-img-6', 'anim-slide-left')" class="text-[11px] px-2.5 py-1 rounded bg-slate-800 hover:bg-sky-600 text-white font-bold transition">
+              <i class="fa-solid fa-rotate-right"></i> Replay
+            </button>
+          </div>
+          <div class="aspect-[16/9] rounded-xl overflow-hidden bg-slate-950 border border-slate-800 flex items-center justify-center">
+            <img id="card-img-6" src="assets/covers/cover_1.png" alt="Slide Left" class="w-full h-full object-contain anim-slide-left">
+          </div>
+          <p class="text-[11px] text-slate-400 leading-relaxed">Smooth horizontal panoramic entrance from left to right.</p>
+        </div>
+
+        <!-- Card 7: Slide Up -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 space-y-3 shadow-xl">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold uppercase text-sky-400 font-mono">07. Slide Up</span>
+            <button onclick="replayCard('card-img-7', 'anim-slide-up')" class="text-[11px] px-2.5 py-1 rounded bg-slate-800 hover:bg-sky-600 text-white font-bold transition">
+              <i class="fa-solid fa-rotate-right"></i> Replay
+            </button>
+          </div>
+          <div class="aspect-[16/9] rounded-xl overflow-hidden bg-slate-950 border border-slate-800 flex items-center justify-center">
+            <img id="card-img-7" src="assets/covers/cover_2.png" alt="Slide Up" class="w-full h-full object-contain anim-slide-up">
+          </div>
+          <p class="text-[11px] text-slate-400 leading-relaxed">Vertical elevation from 60px below with soft damping.</p>
+        </div>
+
+        <!-- Card 8: Wipe Reveal Curtain -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 space-y-3 shadow-xl">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold uppercase text-sky-400 font-mono">08. Wipe Reveal</span>
+            <button onclick="replayCard('card-img-8', 'anim-wipe-curtain')" class="text-[11px] px-2.5 py-1 rounded bg-slate-800 hover:bg-sky-600 text-white font-bold transition">
+              <i class="fa-solid fa-rotate-right"></i> Replay
+            </button>
+          </div>
+          <div class="aspect-[16/9] rounded-xl overflow-hidden bg-slate-950 border border-slate-800 flex items-center justify-center">
+            <img id="card-img-8" src="assets/covers/cover_3.png" alt="Wipe Reveal" class="w-full h-full object-contain anim-wipe-curtain">
+          </div>
+          <p class="text-[11px] text-slate-400 leading-relaxed">Vertical center split curtain opening seamlessly.</p>
+        </div>
+
+        <!-- Card 9: Rotate + Settle -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 space-y-3 shadow-xl">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold uppercase text-sky-400 font-mono">09. Rotate + Settle</span>
+            <button onclick="replayCard('card-img-9', 'anim-rotate-scale')" class="text-[11px] px-2.5 py-1 rounded bg-slate-800 hover:bg-sky-600 text-white font-bold transition">
+              <i class="fa-solid fa-rotate-right"></i> Replay
+            </button>
+          </div>
+          <div class="aspect-[16/9] rounded-xl overflow-hidden bg-slate-950 border border-slate-800 flex items-center justify-center">
+            <img id="card-img-9" src="assets/covers/cover_4.png" alt="Rotate Scale" class="w-full h-full object-contain anim-rotate-scale">
+          </div>
+          <p class="text-[11px] text-slate-400 leading-relaxed">Hinges from -5deg rotation with expansion into equilibrium.</p>
+        </div>
+
+        <!-- Card 10: Iris Circular Aperture -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 space-y-3 shadow-xl">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold uppercase text-sky-400 font-mono">10. Iris Circular Mask</span>
+            <button onclick="replayCard('card-img-10', 'anim-iris-aperture')" class="text-[11px] px-2.5 py-1 rounded bg-slate-800 hover:bg-sky-600 text-white font-bold transition">
+              <i class="fa-solid fa-rotate-right"></i> Replay
+            </button>
+          </div>
+          <div class="aspect-[16/9] rounded-xl overflow-hidden bg-slate-950 border border-slate-800 flex items-center justify-center">
+            <img id="card-img-10" src="assets/covers/cover_5.png" alt="Iris Mask" class="w-full h-full object-contain anim-iris-aperture">
+          </div>
+          <p class="text-[11px] text-slate-400 leading-relaxed">Center circular optical aperture expands outwards smoothly.</p>
+        </div>
+
+        <!-- Card 11: Flip 3D -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 space-y-3 shadow-xl">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold uppercase text-sky-400 font-mono">11. Flip 3D Vertical</span>
+            <button onclick="replayCard('card-img-11', 'anim-flip-3d')" class="text-[11px] px-2.5 py-1 rounded bg-slate-800 hover:bg-sky-600 text-white font-bold transition">
+              <i class="fa-solid fa-rotate-right"></i> Replay
+            </button>
+          </div>
+          <div class="aspect-[16/9] rounded-xl overflow-hidden bg-slate-950 border border-slate-800 flex items-center justify-center">
+            <img id="card-img-11" src="assets/covers/cover_1.png" alt="Flip 3D" class="w-full h-full object-contain anim-flip-3d">
+          </div>
+          <p class="text-[11px] text-slate-400 leading-relaxed">Flips 90 degrees on the 3D X-axis into view.</p>
+        </div>
+
+        <!-- Card 12: Glitch Cyber -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 space-y-3 shadow-xl">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold uppercase text-yellow-400 font-mono">12. Glitch Cyber</span>
+            <button onclick="replayCard('card-img-12', 'anim-glitch-settle')" class="text-[11px] px-2.5 py-1 rounded bg-slate-800 hover:bg-yellow-600 text-white font-bold transition">
+              <i class="fa-solid fa-rotate-right"></i> Replay
+            </button>
+          </div>
+          <div class="aspect-[16/9] rounded-xl overflow-hidden bg-slate-950 border border-slate-800 flex items-center justify-center">
+            <img id="card-img-12" src="assets/covers/cover_2.png" alt="Glitch Cyber" class="w-full h-full object-contain anim-glitch-settle">
+          </div>
+          <p class="text-[11px] text-slate-400 leading-relaxed">High-tech digital holographic twitch and lock-in.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- NATIVE APP-LIKE MOBILE BOTTOM NAVIGATION DOCK -->
+  <nav aria-label="Mobile Bottom App Bar" class="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-slate-950/95 backdrop-blur-xl border-t border-slate-800 shadow-2xl py-1.5 px-2 pb-[env(safe-area-inset-bottom,8px)]">
+    <div class="grid grid-cols-5 gap-1 text-center items-center max-w-md mx-auto">
+      <a href="index.html" class="flex flex-col items-center justify-center py-1 text-sky-400 font-bold">
+        <i class="fa-solid fa-house text-base mb-0.5"></i>
+        <span class="text-[10px] tracking-tight">Home</span>
+      </a>
+      <a href="products.html" class="flex flex-col items-center justify-center py-1 text-slate-400 hover:text-sky-400 font-medium transition">
+        <i class="fa-solid fa-boxes-stacked text-base mb-0.5"></i>
+        <span class="text-[10px] tracking-tight">Products</span>
+      </a>
+      <a href="animation-lab.html" class="flex flex-col items-center justify-center py-1 text-emerald-400 font-bold">
+        <i class="fa-solid fa-wand-magic-sparkles text-base mb-0.5 animate-pulse"></i>
+        <span class="text-[10px] tracking-tight">FX Lab</span>
+      </a>
+      <a href="industries.html" class="flex flex-col items-center justify-center py-1 text-slate-400 hover:text-sky-400 font-medium transition">
+        <i class="fa-solid fa-industry text-base mb-0.5"></i>
+        <span class="text-[10px] tracking-tight">Industries</span>
+      </a>
+      <a href="https://wa.me/919967384878?text=Hi%20Belubeari%20Exim,%20I%20need%20a%20quotation" target="_blank" class="flex flex-col items-center justify-center py-1 text-emerald-400 font-bold transition">
+        <i class="fa-brands fa-whatsapp text-lg mb-0.5"></i>
+        <span class="text-[10px] tracking-tight">RFQ</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- JAVASCRIPT CONTROLLER -->
+  <script>
+    let currentFxClass = 'anim-blur-sharp';
+
+    function applyFx(fxClass, label, btnElem) {
+      currentFxClass = fxClass;
+      document.getElementById('active-fx-label').innerText = label;
+      
+      // Update active button UI
+      document.querySelectorAll('.fx-btn').forEach(btn => btn.classList.remove('active-fx-btn'));
+      if (btnElem) btnElem.classList.add('active-fx-btn');
+
+      triggerAnimation();
+    }
+
+    function triggerAnimation() {
+      const stageImg = document.getElementById('main-stage-img');
+      if (!stageImg) return;
+
+      // Remove all animation classes
+      stageImg.className = 'w-full h-full object-contain sm:object-cover';
+      void stageImg.offsetWidth; // Trigger DOM reflow
+
+      // Re-apply selected animation class
+      stageImg.className = `w-full h-full object-contain sm:object-cover ${currentFxClass}`;
+    }
+
+    function changeCover(src, index) {
+      const stageImg = document.getElementById('main-stage-img');
+      if (!stageImg) return;
+      stageImg.src = src;
+      triggerAnimation();
+    }
+
+    function setSpeed(speedVal, btn) {
+      document.documentElement.style.setProperty('--anim-speed', speedVal);
+      btn.parentElement.querySelectorAll('button').forEach(b => {
+        b.className = 'px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] font-mono';
+      });
+      btn.className = 'px-2 py-1 rounded bg-sky-600 text-white text-[11px] font-mono font-bold';
+      triggerAnimation();
+    }
+
+    function replayCard(imgId, fxClass) {
+      const img = document.getElementById(imgId);
+      if (!img) return;
+      img.className = 'w-full h-full object-contain';
+      void img.offsetWidth; // Reflow
+      img.className = `w-full h-full object-contain ${fxClass}`;
+    }
+
+    function replayAllCards() {
+      const cards = [
+        { id: 'card-img-1', fx: 'anim-blur-sharp' },
+        { id: 'card-img-2', fx: 'anim-perspective-3d' },
+        { id: 'card-img-3', fx: 'anim-clip-reveal' },
+        { id: 'card-img-4', fx: 'anim-zoom-out' },
+        { id: 'card-img-5', fx: 'anim-scale-in' },
+        { id: 'card-img-6', fx: 'anim-slide-left' },
+        { id: 'card-img-7', fx: 'anim-slide-up' },
+        { id: 'card-img-8', fx: 'anim-wipe-curtain' },
+        { id: 'card-img-9', fx: 'anim-rotate-scale' },
+        { id: 'card-img-10', fx: 'anim-iris-aperture' },
+        { id: 'card-img-11', fx: 'anim-flip-3d' },
+        { id: 'card-img-12', fx: 'anim-glitch-settle' }
+      ];
+
+      cards.forEach((item, idx) => {
+        setTimeout(() => {
+          replayCard(item.id, item.fx);
+        }, idx * 60);
+      });
+    }
+  </script>
+</body>
+</html>
