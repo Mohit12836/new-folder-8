@@ -678,3 +678,60 @@
   background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.22), transparent 70%);
   pointer-events: none;
 }
+
+/* 🌟 GLASS BLACK SHINING MENU BOX BUTTONS 🌟 */
+.nav-glass-box {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.95rem;
+  background: rgba(5, 8, 17, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  border-radius: 8px;
+  color: #ffffff !important;
+  font-weight: 900;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  text-decoration: none;
+}
+
+/* Chamakti hui Shimmer beam for Nav Glass Box */
+.nav-glass-box::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 60%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: rotate(25deg);
+  animation: nav-box-shine 4s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes nav-box-shine {
+  0% { left: -100%; }
+  30% { left: 150%; }
+  100% { left: 150%; }
+}
+
+.nav-glass-box:hover {
+  transform: translateY(-2px) scale(1.04);
+  background: rgba(12, 19, 36, 0.98);
+  border-color: #fbbf24;
+  color: #ffffff !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7), 0 0 16px rgba(251, 191, 36, 0.45);
+}
+
+.nav-glass-box-active {
+  background: rgba(8, 14, 28, 0.98);
+  border-color: #fbbf24;
+  box-shadow: 0 0 16px rgba(251, 191, 36, 0.4), inset 0 0 8px rgba(251, 191, 36, 0.2);
+}
