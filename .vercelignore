@@ -1,0 +1,11 @@
+.git
+.vercel
+node_modules
+*.py
+*.log
+*.json
+!robots.txt
+build_full_website.py
+clone_exact_rays.py
+content/
+data/

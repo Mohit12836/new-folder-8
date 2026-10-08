@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products Catalog - Belubeari Exim | Belubeari Exim Mumbai</title>
+  <meta name="description" content="Belubeari Exim Industrial Solutions - Premier stockist for Bearings, Power Transmission Belts, Conveyor Belts & Spares at Masjid Bunder, Mumbai." />
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#0284c7', // Royal Corporate Blue
+              dark: '#0369a1',
+              light: '#38bdf8'
+            },
+            charcoal: '#2d3239',
+            corp: {
+              900: '#0f172a',
+              950: '#090d16'
+            }
+          },
+          fontFamily: {
+            heading: ['Arial', 'Helvetica Neue', 'Helvetica', 'sans-serif'],
+            sans: ['Arial', 'Helvetica Neue', 'Helvetica', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      max-width: 100%;
+      overflow-x: clip;
+      scroll-behavior: smooth;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+      font-weight: 400;
+      color: #475569;
+      background-color: #ffffff;
+    }
+    h1, h2, h3, h4, h5, h6, .heading-font {
+      font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+      font-weight: 700;
+      color: #0f172a;
+      letter-spacing: -0.01em;
+    }
+    p, span, li, a {
+      font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    }
+    img, video, svg, canvas, iframe {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    /* 🌟 ANIMATED MOVING BORDER BEAM & GLOWING SHADOW 🌟 */
+    @property --border-angle {
+      syntax: "<angle>";
+      inherits: false;
+      initial-value: 0deg;
+    }
+    @keyframes border-beam-rotate {
+      0% { --border-angle: 0deg; }
+      100% { --border-angle: 360deg; }
+    }
+    @keyframes ambient-glow {
+      0%, 100% { box-shadow: 0 4px 15px rgba(2, 132, 199, 0.12), 0 0 10px rgba(56, 189, 248, 0.15); }
+      50% { box-shadow: 0 12px 30px rgba(2, 132, 199, 0.3), 0 0 20px rgba(56, 189, 248, 0.35); }
+    }
+    @keyframes pulse-wave {
+      0% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.15); opacity: 0.4; }
+      100% { transform: scale(1); opacity: 0.8; }
+    }
+
+    .animated-border-card {
+      position: relative;
+      background: #ffffff;
+      border-radius: 6px;
+      overflow: hidden;
+      transition: all 0.35s ease;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      border: 1px solid #e2e8f0;
+      animation: ambient-glow 4s ease-in-out infinite;
+    }
+    .animated-border-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 2px;
+      background: conic-gradient(from var(--border-angle), transparent 25%, #0284c7 45%, #38bdf8 50%, #0284c7 55%, transparent 75%);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      animation: border-beam-rotate 4s linear infinite;
+      pointer-events: none;
+      opacity: 0.75;
+    }
+    .animated-border-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 36px rgba(2, 132, 199, 0.35), 0 0 25px rgba(56, 189, 248, 0.45);
+    }
+    .animated-border-card:hover::before {
+      opacity: 1;
+      animation-duration: 2s;
+    }
+
+    /* STAGE AUTO-FIT */
+    .product-stage {
+      width: 100%;
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at center, #ffffff 0%, #f8fafc 100%);
+      border-bottom: 1px solid #f1f5f9;
+      padding: 1.25rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .product-stage img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      object-position: center;
+      transition: transform 0.4s ease;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.08));
+    }
+    .animated-border-card:hover .product-stage img {
+      transform: scale(1.1);
+      filter: drop-shadow(0 8px 16px rgba(2, 132, 199, 0.25));
+    }
+
+    .industry-stage {
+      width: 100%;
+      height: 160px;
+      position: relative;
+      overflow: hidden;
+      background-color: #0f172a;
+    }
+    .industry-stage img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.5s ease;
+    }
+    .animated-border-card:hover .industry-stage img {
+      transform: scale(1.08);
+    }
+
+    /* SECTION DIVIDER ACCENT */
+    .section-divider-bar {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 8px;
+      margin-bottom: 16px;
+    }
+    .section-divider-bar .bar-left {
+      width: 14px;
+      height: 3px;
+      background-color: #0284c7;
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+    .section-divider-bar .bar-mid {
+      width: 42px;
+      height: 4px;
+      background: linear-gradient(90deg, #0284c7, #38bdf8, #0284c7);
+      background-size: 200% 100%;
+      border-radius: 2px;
+      animation: bar-gradient 3s infinite linear;
+    }
+    .section-divider-bar .bar-right {
+      width: 14px;
+      height: 3px;
+      background-color: #0284c7;
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+    @keyframes bar-gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* BUTTON LIGHT SWEEP SHINE ANIMATION */
+    .btn-shine {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-shine::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 40%;
+      height: 200%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+      transform: rotate(25deg);
+      animation: shine-sweep 3.5s infinite ease-in-out;
+    }
+    @keyframes shine-sweep {
+      0% { left: -60%; }
+      35% { left: 130%; }
+      100% { left: 130%; }
+    }
+
+    .nav-dropdown:hover .dropdown-menu {
+      display: block;
+    }
+  </style>
+  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body class="bg-white flex flex-col min-h-screen font-sans">
+  <!-- 3-SECOND CINEMATIC SITE PRELOADER -->
+  <div id="site-preloader">
+    <div class="preloader-glow-orb"></div>
+    <div class="preloader-logo-box">
+      <img src="assets/images/logo.png" alt="Belubeari Exim" class="preloader-logo-img">
+      <div class="text-xs uppercase font-bold tracking-[0.25em] text-sky-400 mt-4">
+        BELT • LUBRICANT • AUR • BEARING
+      </div>
+      <div class="text-[11px] text-slate-400 mt-1">Masjid Bunder, Mumbai • Global Supply</div>
+      <div class="preloader-progress-track">
+        <div class="preloader-progress-bar"></div>
+      </div>
+      <div class="preloader-percent-text text-[11px] font-mono text-slate-400 mt-2 font-bold">0%</div>
+    </div>
+  </div>
+
+  <!-- TOP BAR (Rays Exact Match) -->
+  <div class="bg-[#111111] text-white text-xs py-2.5 px-4 border-b border-neutral-800">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-4 text-neutral-300">
+        <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-primary"></i> Flat No. 8, Yusuf Meherali Road, Masjid Bunder, Mumbai – 400003</span>
+        <span class="hidden md:inline text-neutral-600">|</span>
+        <span class="hidden md:flex items-center gap-1.5"><i class="fa-solid fa-envelope text-primary"></i> belubeariexim@gmail.com</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <span class="hidden sm:inline text-neutral-300">Mon - Sat : 10:00 AM - 7:30 PM</span>
+        <div class="hidden sm:flex items-center gap-2.5 text-neutral-400 border-l border-neutral-700 pl-3">
+          <a href="https://wa.me/919967384878?text=Hi%20Belubeari%20Exim,%20I%20need%20a%20quotation" target="_blank" class="hover:text-emerald-400 transition" title="WhatsApp"><i class="fa-brands fa-whatsapp text-sm"></i></a>
+          <a href="https://in.linkedin.com/in/belubeari-exim-1b6760166" target="_blank" class="hover:text-sky-400 transition" title="LinkedIn"><i class="fa-brands fa-linkedin text-sm"></i></a>
+          <a href="https://www.instagram.com/belubeariexim?utm_source=qr&stkn=czg0aGc2eGxrejA5" target="_blank" class="hover:text-pink-400 transition" title="Instagram"><i class="fa-brands fa-instagram text-sm"></i></a>
+        </div>
+        <a href="https://wa.me/919967384878?text=Hi%20Belubeari%20Exim,%20I%20need%20a%20quotation" target="_blank" class="bg-primary hover:bg-primary-dark text-white px-3 py-1 rounded font-bold uppercase transition flex items-center gap-1.5 shadow">
+          <i class="fa-brands fa-whatsapp"></i> Quick RFQ
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN NAVIGATION -->
+  <header class="sticky top-0 z-50 bg-white shadow-sm border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 flex items-center justify-between h-20">
+      
+            <!-- BRAND LOGO -->
+      <a href="index.html" class="flex items-center gap-3 py-1">
+        <img src="assets/images/logo.png" alt="Belubeari Exim Logo" class="h-12 sm:h-14 w-auto object-contain drop-shadow-sm">
+      </a>
+
+      <!-- MAIN MENU -->
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold uppercase text-[#2d3239]">
+        <a href="index.html" class="hover:text-primary py-2 transition">Home</a>
+        <a href="about-us.html" class="hover:text-primary py-2 transition">About Us</a>
+        
+        <!-- PRODUCTS DROPDOWN -->
+        <div class="relative nav-dropdown py-2 cursor-pointer">
+          <a href="products.html" class="text-primary flex items-center gap-1 transition">
+            Products <i class="fa-solid fa-chevron-down text-[10px]"></i>
+          </a>
+          <div class="dropdown-menu absolute left-0 top-full hidden w-64 bg-white shadow-2xl border border-slate-200 rounded py-2 z-50">
+            <a href="ball-bearing.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-primary font-medium border-b border-slate-100 last:border-0">Ball Bearing</a><a href="timing-belts.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-primary font-medium border-b border-slate-100 last:border-0">Timing Belts</a><a href="conveyor-belts.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-primary font-medium border-b border-slate-100 last:border-0">Conveyor Belts</a><a href="v-belts.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-primary font-medium border-b border-slate-100 last:border-0">V-Belts</a><a href="flat-belts.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-primary font-medium border-b border-slate-100 last:border-0">Flat Belts</a><a href="linear-motion-bearing.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-primary font-medium border-b border-slate-100 last:border-0">Linear Motion Bearing</a><a href="pillow-block-bearing.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-primary font-medium border-b border-slate-100 last:border-0">Pillow Block Bearing</a><a href="oil-grease.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-primary font-medium border-b border-slate-100 last:border-0">Oil & Grease</a><a href="seals-o-ring.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-primary font-medium border-b border-slate-100 last:border-0">Seals & O Ring</a><a href="cots-apron.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-primary font-medium border-b border-slate-100 last:border-0">Cots & Apron</a><a href="rubber-emery-roller-covering.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-primary font-medium border-b border-slate-100 last:border-0">Rubber Emery/Roller Covering</a><a href="special-coated-belts.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-primary font-medium border-b border-slate-100 last:border-0">Special Coated Belts</a>
+          </div>
+        </div>
+
+        <!-- INDUSTRIES DROPDOWN -->
+        <div class="relative nav-dropdown py-2 cursor-pointer">
+          <a href="industries.html" class="hover:text-primary flex items-center gap-1 transition">
+            Industries <i class="fa-solid fa-chevron-down text-[10px]"></i>
+          </a>
+          <div class="dropdown-menu absolute left-0 top-full hidden w-72 max-h-96 overflow-y-auto bg-white shadow-2xl border border-slate-200 rounded py-2 z-50">
+            <a href="automation-industry.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-primary font-medium border-b border-slate-100 last:border-0">Automation Industry</a><a href="cement-industry.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-primary font-medium border-b border-slate-100 last:border-0">Cement Industry</a><a href="chemical-industry.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-primary font-medium border-b border-slate-100 last:border-0">Chemical Industry</a><a href="food-industry.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-primary font-medium border-b border-slate-100 last:border-0">Food Industry</a><a href="glass-industry.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-primary font-medium border-b border-slate-100 last:border-0">Glass Industry</a><a href="hydropower-industry.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-primary font-medium border-b border-slate-100 last:border-0">Hydropower Industry</a><a href="marine-industry.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-primary font-medium border-b border-slate-100 last:border-0">Marine Industry</a><a href="metalworking.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-primary font-medium border-b border-slate-100 last:border-0">Metalworking</a><a href="mining-industry.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-primary font-medium border-b border-slate-100 last:border-0">Mining Industry</a><a href="oil-gas-industry.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-primary font-medium border-b border-slate-100 last:border-0">Oil & Gas Industry</a><a href="overhead-cranes.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-primary font-medium border-b border-slate-100 last:border-0">Overhead Cranes</a><a href="paper-industry.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-primary font-medium border-b border-slate-100 last:border-0">Paper Industry</a><a href="pharmaceutical-industry.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-primary font-medium border-b border-slate-100 last:border-0">Pharmaceutical Industry</a><a href="railway-industry.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-primary font-medium border-b border-slate-100 last:border-0">Railway Industry</a><a href="rubber-and-plastics-industry.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-primary font-medium border-b border-slate-100 last:border-0">Rubber and Plastics</a><a href="steel-industry.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-primary font-medium border-b border-slate-100 last:border-0">Steel Industry</a><a href="textile-industry.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-primary font-medium border-b border-slate-100 last:border-0">Textile Industry</a><a href="wind-power-industry.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-primary font-medium border-b border-slate-100 last:border-0">Wind Power Industry</a><a href="wire-drawing-industry.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-primary font-medium border-b border-slate-100 last:border-0">Wire Drawing Industry</a><a href="wood-industry.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-primary font-medium border-b border-slate-100 last:border-0">Wood Industry</a>
+          </div>
+        </div>
+
+        <a href="brands.html" class="hover:text-primary py-2 transition">Brands</a>
+        <a href="contact-us.html" class="hover:text-primary py-2 transition">Contact Us</a>
+      </nav>
+
+      <!-- GET A QUOTE BUTTON -->
+      <a href="contact-us.html" class="hidden sm:inline-block bg-primary hover:bg-primary-dark text-white text-xs font-bold uppercase tracking-wider px-6 py-3 rounded shadow transition">
+        Get A Quote
+      </a>
+    </div>
+  </header>
+
+        <div class="bg-slate-100 border-b border-slate-200 py-6">
+          <div class="max-w-7xl mx-auto px-4">
+            <div class="text-xs text-slate-500 font-medium"><a href="index.html" class="hover:text-primary">Home</a> / <span class="text-primary font-bold">Products</span></div>
+            <h1 class="text-3xl font-bold heading-font text-[#2d3239] mt-1 uppercase">Our Products</h1>
+            <div class="section-divider-bar !mx-0"></div>
+          </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          
+    <div class="animated-border-card tilt-card spotlight-card reveal-init flex flex-col">
+      <div class="product-stage">
+        <img src="assets/images/04_white_ball_bearings.jpg" alt="Ball Bearing Belubeari Exim" loading="lazy">
+      </div>
+      <div class="p-5 flex-1 flex flex-col justify-between space-y-3 bg-white">
+        <div>
+          <h3 class="text-xl font-bold heading-font text-[#2d3239] group-hover:text-primary transition uppercase">Ball Bearing</h3>
+          <p class="text-xs text-slate-500 mt-2 line-clamp-3 leading-relaxed">Precision deep groove ball bearings, angular contact bearings, and thrust ball bearings for high-speed industrial machinery.</p>
+        </div>
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+          <a href="ball-bearing.html" class="text-xs font-bold text-primary hover:text-primary-dark uppercase flex items-center gap-1">
+            Read More <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </a>
+          <a href="https://wa.me/919967384878?text=Hi%20Belubeari%20Exim,%20I%20need%20a%20quote%20for%20Ball Bearing" target="_blank" class="text-emerald-600 hover:text-emerald-700 text-xs font-bold flex items-center gap-1">
+            <i class="fa-brands fa-whatsapp"></i> Quote
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="animated-border-card tilt-card spotlight-card reveal-init flex flex-col">
+      <div class="product-stage">
+        <img src="assets/images/gates-powergrip-gt4-heavy-duty-timing-belt.jpg" alt="Timing Belts Belubeari Exim" loading="lazy">
+      </div>
+      <div class="p-5 flex-1 flex flex-col justify-between space-y-3 bg-white">
+        <div>
+          <h3 class="text-xl font-bold heading-font text-[#2d3239] group-hover:text-primary transition uppercase">Timing Belts</h3>
+          <p class="text-xs text-slate-500 mt-2 line-clamp-3 leading-relaxed">Industrial synchronous timing belts in rubber and polyurethane with metric and imperial pitches for non-slip power transmission.</p>
+        </div>
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+          <a href="timing-belts.html" class="text-xs font-bold text-primary hover:text-primary-dark uppercase flex items-center gap-1">
+            Read More <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </a>
+          <a href="https://wa.me/919967384878?text=Hi%20Belubeari%20Exim,%20I%20need%20a%20quote%20for%20Timing Belts" target="_blank" class="text-emerald-600 hover:text-emerald-700 text-xs font-bold flex items-center gap-1">
+            <i class="fa-brands fa-whatsapp"></i> Quote
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="animated-border-card tilt-card spotlight-card reveal-init flex flex-col">
+      <div class="product-stage">
+        <img src="assets/images/pvc-green-cleated-conveyor-belts-collage.jpg" alt="Conveyor Belts Belubeari Exim" loading="lazy">
+      </div>
+      <div class="p-5 flex-1 flex flex-col justify-between space-y-3 bg-white">
+        <div>
+          <h3 class="text-xl font-bold heading-font text-[#2d3239] group-hover:text-primary transition uppercase">Conveyor Belts</h3>
+          <p class="text-xs text-slate-500 mt-2 line-clamp-3 leading-relaxed">Heavy-duty rubber and PVC/PU conveyor belting for bulk material handling, food processing, and packaging lines.</p>
+        </div>
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+          <a href="conveyor-belts.html" class="text-xs font-bold text-primary hover:text-primary-dark uppercase flex items-center gap-1">
+            Read More <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </a>
+          <a href="https://wa.me/919967384878?text=Hi%20Belubeari%20Exim,%20I%20need%20a%20quote%20for%20Conveyor Belts" target="_blank" class="text-emerald-600 hover:text-emerald-700 text-xs font-bold flex items-center gap-1">
+            <i class="fa-brands fa-whatsapp"></i> Quote
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="animated-border-card tilt-card spotlight-card reveal-init flex flex-col">
+      <div class="product-stage">
+        <img src="assets/images/03_white_v_belts_set.jpg" alt="V-Belts Belubeari Exim" loading="lazy">
+      </div>
+      <div class="p-5 flex-1 flex flex-col justify-between space-y-3 bg-white">
+        <div>
+          <h3 class="text-xl font-bold heading-font text-[#2d3239] group-hover:text-primary transition uppercase">V-Belts</h3>
+          <p class="text-xs text-slate-500 mt-2 line-clamp-3 leading-relaxed">Classical, raw edge cogged, and space-saver wedge V-belts for industrial fans, compressors, pumps, and crushers.</p>
+        </div>
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+          <a href="v-belts.html" class="text-xs font-bold text-primary hover:text-primary-dark uppercase flex items-center gap-1">
+            Read More <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </a>
+          <a href="https://wa.me/919967384878?text=Hi%20Belubeari%20Exim,%20I%20need%20a%20quote%20for%20V-Belts" target="_blank" class="text-emerald-600 hover:text-emerald-700 text-xs font-bold flex items-center gap-1">
+            <i class="fa-brands fa-whatsapp"></i> Quote
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="animated-border-card tilt-card spotlight-card reveal-init flex flex-col">
+      <div class="product-stage">
+        <img src="assets/images/07_white_flat_transmission_belts.jpg" alt="Flat Belts Belubeari Exim" loading="lazy">
+      </div>
+      <div class="p-5 flex-1 flex flex-col justify-between space-y-3 bg-white">
+        <div>
+          <h3 class="text-xl font-bold heading-font text-[#2d3239] group-hover:text-primary transition uppercase">Flat Belts</h3>
+          <p class="text-xs text-slate-500 mt-2 line-clamp-3 leading-relaxed">High-efficiency flat power transmission and tangential drive belts with high friction rubber or leather surfaces.</p>
+        </div>
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+          <a href="flat-belts.html" class="text-xs font-bold text-primary hover:text-primary-dark uppercase flex items-center gap-1">
+            Read More <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </a>
+          <a href="https://wa.me/919967384878?text=Hi%20Belubeari%20Exim,%20I%20need%20a%20quote%20for%20Flat Belts" target="_blank" class="text-emerald-600 hover:text-emerald-700 text-xs font-bold flex items-center gap-1">
+            <i class="fa-brands fa-whatsapp"></i> Quote
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="animated-border-card tilt-card spotlight-card reveal-init flex flex-col">
+      <div class="product-stage">
+        <img src="assets/images/04_deep_groove_ball_bearings.jpg" alt="Linear Motion Bearing Belubeari Exim" loading="lazy">
+      </div>
+      <div class="p-5 flex-1 flex flex-col justify-between space-y-3 bg-white">
+        <div>
+          <h3 class="text-xl font-bold heading-font text-[#2d3239] group-hover:text-primary transition uppercase">Linear Motion Bearing</h3>
+          <p class="text-xs text-slate-500 mt-2 line-clamp-3 leading-relaxed">Precision linear guide rails, ball bushing bearings, and recirculating carriage blocks for automated movement.</p>
+        </div>
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+          <a href="linear-motion-bearing.html" class="text-xs font-bold text-primary hover:text-primary-dark uppercase flex items-center gap-1">
+            Read More <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </a>
+          <a href="https://wa.me/919967384878?text=Hi%20Belubeari%20Exim,%20I%20need%20a%20quote%20for%20Linear Motion Bearing" target="_blank" class="text-emerald-600 hover:text-emerald-700 text-xs font-bold flex items-center gap-1">
+            <i class="fa-brands fa-whatsapp"></i> Quote
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="animated-border-card tilt-card spotlight-card reveal-init flex flex-col">
+      <div class="product-stage">
+        <img src="assets/images/05_white_pillow_block.jpg" alt="Pillow Block Bearing Belubeari Exim" loading="lazy">
+      </div>
+      <div class="p-5 flex-1 flex flex-col justify-between space-y-3 bg-white">
+        <div>
+          <h3 class="text-xl font-bold heading-font text-[#2d3239] group-hover:text-primary transition uppercase">Pillow Block Bearing</h3>
+          <p class="text-xs text-slate-500 mt-2 line-clamp-3 leading-relaxed">Mounted cast iron and stainless steel pillow block bearing units with self-aligning insert bearings.</p>
+        </div>
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+          <a href="pillow-block-bearing.html" class="text-xs font-bold text-primary hover:text-primary-dark uppercase flex items-center gap-1">
+            Read More <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </a>
+          <a href="https://wa.me/919967384878?text=Hi%20Belubeari%20Exim,%20I%20need%20a%20quote%20for%20Pillow Block Bearing" target="_blank" class="text-emerald-600 hover:text-emerald-700 text-xs font-bold flex items-center gap-1">
+            <i class="fa-brands fa-whatsapp"></i> Quote
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="animated-border-card tilt-card spotlight-card reveal-init flex flex-col">
+      <div class="product-stage">
+        <img src="assets/images/Industrial-grease.jpg" alt="Oil & Grease Belubeari Exim" loading="lazy">
+      </div>
+      <div class="p-5 flex-1 flex flex-col justify-between space-y-3 bg-white">
+        <div>
+          <h3 class="text-xl font-bold heading-font text-[#2d3239] group-hover:text-primary transition uppercase">Oil & Grease</h3>
+          <p class="text-xs text-slate-500 mt-2 line-clamp-3 leading-relaxed">High-performance synthetic greases, EP extreme pressure greases, and high-temperature lubricants for bearings and gears.</p>
+        </div>
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+          <a href="oil-grease.html" class="text-xs font-bold text-primary hover:text-primary-dark uppercase flex items-center gap-1">
+            Read More <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </a>
+          <a href="https://wa.me/919967384878?text=Hi%20Belubeari%20Exim,%20I%20need%20a%20quote%20for%20Oil & Grease" target="_blank" class="text-emerald-600 hover:text-emerald-700 text-xs font-bold flex items-center gap-1">
+            <i class="fa-brands fa-whatsapp"></i> Quote
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="animated-border-card tilt-card spotlight-card reveal-init flex flex-col">
+      <div class="product-stage">
+        <img src="assets/images/Seals-O-Ring.jpg" alt="Seals & O Ring Belubeari Exim" loading="lazy">
+      </div>
+      <div class="p-5 flex-1 flex flex-col justify-between space-y-3 bg-white">
+        <div>
+          <h3 class="text-xl font-bold heading-font text-[#2d3239] group-hover:text-primary transition uppercase">Seals & O Ring</h3>
+          <p class="text-xs text-slate-500 mt-2 line-clamp-3 leading-relaxed">Rotary shaft oil seals, hydraulic rod/piston seals, and precision elastomeric O-rings in NBR, Viton (FKM), and Silicone.</p>
+        </div>
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+          <a href="seals-o-ring.html" class="text-xs font-bold text-primary hover:text-primary-dark uppercase flex items-center gap-1">
+            Read More <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </a>
+          <a href="https://wa.me/919967384878?text=Hi%20Belubeari%20Exim,%20I%20need%20a%20quote%20for%20Seals & O Ring" target="_blank" class="text-emerald-600 hover:text-emerald-700 text-xs font-bold flex items-center gap-1">
+            <i class="fa-brands fa-whatsapp"></i> Quote
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="animated-border-card tilt-card spotlight-card reveal-init flex flex-col">
+      <div class="product-stage">
+        <img src="assets/images/IMG-20260903-WA0023.jpg" alt="Cots & Apron Belubeari Exim" loading="lazy">
+      </div>
+      <div class="p-5 flex-1 flex flex-col justify-between space-y-3 bg-white">
+        <div>
+          <h3 class="text-xl font-bold heading-font text-[#2d3239] group-hover:text-primary transition uppercase">Cots & Apron</h3>
+          <p class="text-xs text-slate-500 mt-2 line-clamp-3 leading-relaxed">Precision rubber cots and synthetic aprons engineered for ring spinning, roving, and draw frames in textile mills.</p>
+        </div>
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+          <a href="cots-apron.html" class="text-xs font-bold text-primary hover:text-primary-dark uppercase flex items-center gap-1">
+            Read More <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </a>
+          <a href="https://wa.me/919967384878?text=Hi%20Belubeari%20Exim,%20I%20need%20a%20quote%20for%20Cots & Apron" target="_blank" class="text-emerald-600 hover:text-emerald-700 text-xs font-bold flex items-center gap-1">
+            <i class="fa-brands fa-whatsapp"></i> Quote
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="animated-border-card tilt-card spotlight-card reveal-init flex flex-col">
+      <div class="product-stage">
+        <img src="assets/images/usibo-rubber-emery-strips-roller-coverings-profiles.jpg" alt="Rubber Emery/Roller Covering Belubeari Exim" loading="lazy">
+      </div>
+      <div class="p-5 flex-1 flex flex-col justify-between space-y-3 bg-white">
+        <div>
+          <h3 class="text-xl font-bold heading-font text-[#2d3239] group-hover:text-primary transition uppercase">Rubber Emery/Roller Covering</h3>
+          <p class="text-xs text-slate-500 mt-2 line-clamp-3 leading-relaxed">Emery rubber fillets and high-grip roller covering tapes for textile looms, fabric processing, and film winding.</p>
+        </div>
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+          <a href="rubber-emery-roller-covering.html" class="text-xs font-bold text-primary hover:text-primary-dark uppercase flex items-center gap-1">
+            Read More <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </a>
+          <a href="https://wa.me/919967384878?text=Hi%20Belubeari%20Exim,%20I%20need%20a%20quote%20for%20Rubber Emery/Roller Covering" target="_blank" class="text-emerald-600 hover:text-emerald-700 text-xs font-bold flex items-center gap-1">
+            <i class="fa-brands fa-whatsapp"></i> Quote
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="animated-border-card tilt-card spotlight-card reveal-init flex flex-col">
+      <div class="product-stage">
+        <img src="assets/images/08_white_linatex_coated_belts.jpg" alt="Special Coated Belts Belubeari Exim" loading="lazy">
+      </div>
+      <div class="p-5 flex-1 flex flex-col justify-between space-y-3 bg-white">
+        <div>
+          <h3 class="text-xl font-bold heading-font text-[#2d3239] group-hover:text-primary transition uppercase">Special Coated Belts</h3>
+          <p class="text-xs text-slate-500 mt-2 line-clamp-3 leading-relaxed">Timing and flat belts with specialized coatings such as Linatex, seamless PU, sponge rubber, and silicone for haul-off applications.</p>
+        </div>
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+          <a href="special-coated-belts.html" class="text-xs font-bold text-primary hover:text-primary-dark uppercase flex items-center gap-1">
+            Read More <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </a>
+          <a href="https://wa.me/919967384878?text=Hi%20Belubeari%20Exim,%20I%20need%20a%20quote%20for%20Special Coated Belts" target="_blank" class="text-emerald-600 hover:text-emerald-700 text-xs font-bold flex items-center gap-1">
+            <i class="fa-brands fa-whatsapp"></i> Quote
+          </a>
+        </div>
+      </div>
+    </div>
+    
+        </div>
+        
+  <!-- FOOTER (Exact 4-Column Rays Layout with Google Map) -->
+  <footer class="bg-[#111111] text-slate-300 font-sans border-t-4 border-[#0284c7] pt-14 pb-8 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-12 border-b border-neutral-800">
+        
+        <!-- Col 1: Belubeari Exim -->
+        <div>
+          <h4 class="font-heading font-bold text-xl text-white uppercase tracking-wider mb-2 border-l-2 border-[#0284c7] pl-2.5">Belubeari Exim</h4>
+          <p class="text-xs text-slate-400 leading-relaxed mt-4 font-sans">
+            At Belubeari Exim Industrial Solutions, we pride ourselves on being at the forefront of industrial innovation. Our team of experts brings decades of experience and a deep understanding of various industries to provide customized solutions that drive success.
+          </p>
+        </div>
+
+        <!-- Col 2: MENU -->
+        <div>
+          <h4 class="font-heading font-bold text-base text-white uppercase tracking-wider mb-2 border-l-2 border-[#0284c7] pl-2.5">MENU</h4>
+          <ul class="space-y-2.5 text-xs text-slate-400 font-sans mt-4">
+            <li><a href="index.html" class="hover:text-white hover:translate-x-1 inline-block transition"><i class="fa-solid fa-angle-right text-[#0284c7] mr-1.5"></i> Home</a></li>
+            <li><a href="about-us.html" class="hover:text-white hover:translate-x-1 inline-block transition"><i class="fa-solid fa-angle-right text-[#0284c7] mr-1.5"></i> About Us</a></li>
+            <li><a href="products.html" class="hover:text-white hover:translate-x-1 inline-block transition"><i class="fa-solid fa-angle-right text-[#0284c7] mr-1.5"></i> Products</a></li>
+            <li><a href="industries.html" class="hover:text-white hover:translate-x-1 inline-block transition"><i class="fa-solid fa-angle-right text-[#0284c7] mr-1.5"></i> Industries</a></li>
+            <li><a href="contact-us.html" class="hover:text-white hover:translate-x-1 inline-block transition"><i class="fa-solid fa-angle-right text-[#0284c7] mr-1.5"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: CONTACT US -->
+        <div>
+          <h4 class="font-heading font-bold text-base text-white uppercase tracking-wider mb-2 border-l-2 border-[#0284c7] pl-2.5">CONTACT US</h4>
+          <div class="space-y-3 text-xs text-slate-400 font-sans mt-4">
+            <p class="flex items-start gap-2">
+              <i class="fa-solid fa-location-dot text-[#0284c7] mt-0.5"></i>
+              <span>Flat No. 8, 261/263 Yusuf Meherali Road, office No 8, 2nd floor, Masjid Bunder (w), Mumbai – 400003, Maharashtra, India.</span>
+            </p>
+            <p class="flex items-center gap-2">
+              <i class="fa-solid fa-phone text-[#0284c7]"></i>
+              <a href="tel:+919967384878" class="hover:text-white font-bold text-sky-400">+91 9967384878</a>
+            </p>
+            <p class="flex items-center gap-2">
+              <i class="fa-solid fa-envelope text-[#0284c7]"></i>
+              <a href="mailto:belubeariexim@gmail.com" class="hover:text-white">belubeariexim@gmail.com</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Col 4: CONTACT US (Map) -->
+        <div>
+          <h4 class="font-heading font-bold text-base text-white uppercase tracking-wider mb-2 border-l-2 border-[#0284c7] pl-2.5">LOCATION MAP</h4>
+          <div class="mt-4 rounded-lg overflow-hidden border border-neutral-800 shadow-md">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.555230985864!2d72.8335803!3d18.9510344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce3ecb8b3dbb%3A0x28972f0db82f6fbf!2sYusuf%20Meher%20Ali%20Rd%2C%20Masjid%20Bunder%2C%20Mumbai%2C%20Maharashtra%20400003!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+              width="100%" 
+              height="140" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright -->
+      <div class="pt-6 text-center text-xs text-slate-500 font-sans flex flex-wrap justify-between items-center gap-2">
+        <p>© 2026 M/s Belubeari Exim Industrial Solutions. All Rights Reserved.</p>
+        <p class="text-slate-400 font-medium">Trade Desk: Masjid Bunder, Mumbai</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/919967384878?text=Hello%20Belubeari%20Exim" target="_blank" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center text-3xl shadow-2xl transition hover:scale-110">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+
+  <!-- FLOATING WHATSAPP WITH RADAR PULSE -->
+  <div class="fixed bottom-6 right-6 z-50">
+    <a href="https://wa.me/919967384878?text=Hello%20Belubeari%20Exim" target="_blank" class="pulse-ring-container w-14 h-14 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full flex items-center justify-center text-2xl shadow-2xl transition transform hover:scale-110" title="Chat on WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+  </div>
+  <script src="assets/js/animations.js"></script>
+</body>
+</html>
