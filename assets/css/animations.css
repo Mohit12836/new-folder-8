@@ -558,3 +558,99 @@
   50% { transform: translate(-45%, -40%) scale(1.25); opacity: 0.8; }
   100% { transform: translate(-55%, -60%) scale(0.9); opacity: 0.5; }
 }
+
+/* ==========================================================================
+   11. GOLDEN LASER PATTI & BOX-TYPE GLOWING LIGHTING BUTTON
+   ========================================================================== */
+.golden-laser-patti {
+  position: relative;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(251, 191, 36, 0.25) 20%, #fbbf24 50%, rgba(251, 191, 36, 0.25) 80%, transparent 100%);
+  box-shadow: 0 0 14px rgba(251, 191, 36, 0.7);
+  animation: golden-shimmer-pan 3.5s linear infinite;
+  background-size: 200% 100%;
+}
+
+@keyframes golden-shimmer-pan {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+@property --btn-light-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+@keyframes btn-light-rotate {
+  0% { --btn-light-angle: 0deg; }
+  100% { --btn-light-angle: 360deg; }
+}
+
+.box-btn-glowing {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 0.65rem 1.4rem;
+  background: #050811;
+  border-radius: 8px; /* Box-Type Structure */
+  color: #ffffff !important;
+  font-weight: 900;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: 1px solid rgba(251, 191, 36, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8), 0 0 15px rgba(251, 191, 36, 0.2);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* Chalti hui rotating border light */
+.box-btn-glowing::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  padding: 2px;
+  background: conic-gradient(from var(--btn-light-angle), transparent 25%, #fbbf24 45%, #38bdf8 50%, #fbbf24 55%, transparent 75%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: btn-light-rotate 3s linear infinite;
+  pointer-events: none;
+}
+
+/* Shimmer beam across button */
+.box-btn-glowing::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -75%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  transform: rotate(25deg);
+  animation: btn-shine-sweep 3.5s infinite ease-in-out;
+}
+
+@keyframes btn-shine-sweep {
+  0% { left: -75%; }
+  35% { left: 140%; }
+  100% { left: 140%; }
+}
+
+/* Magical Hover Reaction */
+.box-btn-glowing:hover {
+  transform: translateY(-3px) scale(1.05);
+  background: #090e1d;
+  box-shadow: 0 0 28px rgba(251, 191, 36, 0.55), 0 0 50px rgba(56, 189, 248, 0.35), inset 0 0 15px rgba(251, 191, 36, 0.25);
+  border-color: #fbbf24;
+}
+
+.box-btn-glowing:active {
+  transform: translateY(0px) scale(0.97);
+}

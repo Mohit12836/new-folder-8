@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMagneticButtons();
   initLiveSocialProofToast();
   initProductGallerySwitcher();
+  initSoundEffects();
 });
 
 /* --------------------------------------------------------------------------
@@ -528,3 +529,72 @@ function initBrandBannerSlider() {
   startAutoPlay();
 }
 
+/* --------------------------------------------------------------------------
+ * 11. PROCEDURAL WEB AUDIO SOUND SYNTHESIZER (Magical Audio Feedback)
+ * -------------------------------------------------------------------------- */
+let audioCtx = null;
+
+function getAudioContext() {
+  if (!audioCtx) {
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    if (AudioContext) audioCtx = new AudioContext();
+  }
+  if (audioCtx && audioCtx.state === 'suspended') {
+    audioCtx.resume();
+  }
+  return audioCtx;
+}
+
+// Gentle harmonic chime on hover
+function playHoverSound() {
+  try {
+    const ctx = getAudioContext();
+    if (!ctx) return;
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+
+    osc.type = 'triangle';
+    osc.frequency.setValueAtTime(540, ctx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(880, ctx.currentTime + 0.08);
+
+    gain.gain.setValueAtTime(0.035, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.08);
+
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+
+    osc.start();
+    osc.stop(ctx.currentTime + 0.08);
+  } catch (e) {}
+}
+
+// Crisp glass click on tap / click
+function playClickSound() {
+  try {
+    const ctx = getAudioContext();
+    if (!ctx) return;
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(750, ctx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(180, ctx.currentTime + 0.09);
+
+    gain.gain.setValueAtTime(0.06, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.09);
+
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+
+    osc.start();
+    osc.stop(ctx.currentTime + 0.09);
+  } catch (e) {}
+}
+
+function initSoundEffects() {
+  const interactiveElements = document.querySelectorAll('.box-btn-glowing, .btn-shine, .btn-shimmer, nav a, .pulse-ring-container');
+  interactiveElements.forEach(el => {
+    el.addEventListener('mouseenter', playHoverSound, { passive: true });
+    el.addEventListener('click', playClickSound, { passive: true });
+  });
+}
