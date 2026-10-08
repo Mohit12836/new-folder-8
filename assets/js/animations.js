@@ -351,11 +351,29 @@ function initFacebookHeroSlider() {
 
   function showSlide(index) {
     if (!slides.length) return;
+    const prevIdx = currentIdx;
     currentIdx = (index + slides.length) % slides.length;
 
+    // Previous slide stays underneath during 2s Iris mask expansion
     slides.forEach((slide, i) => {
-      slide.classList.toggle('active', i === currentIdx);
+      slide.classList.remove('prev-active');
+      if (i === prevIdx && prevIdx !== currentIdx) {
+        slide.classList.add('prev-active');
+      }
+      slide.classList.remove('active');
     });
+
+    // Trigger 2-second Iris reveal on new active slide
+    const nextSlide = slides[currentIdx];
+    void nextSlide.offsetWidth; // DOM Reflow
+    nextSlide.classList.add('active');
+
+    // Clean up previous slide layer after 2s reveal completes
+    setTimeout(() => {
+      slides.forEach((s, i) => {
+        if (i !== currentIdx) s.classList.remove('prev-active');
+      });
+    }, 2050);
 
     dots.forEach((dot, i) => {
       if (i === currentIdx) {
@@ -395,7 +413,7 @@ function initFacebookHeroSlider() {
     stopAutoPlay();
     timer = setInterval(() => {
       showSlide(currentIdx + 1);
-    }, 4500);
+    }, 5000);
   }
 
   function stopAutoPlay() {

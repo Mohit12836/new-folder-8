@@ -346,6 +346,23 @@
   }
 }
 
+/* IRIS CIRCULAR APERTURE MASK 2-SECOND CINEMATIC ENGINE */
+@keyframes hero-iris-reveal {
+  0% {
+    clip-path: circle(0% at 50% 50%);
+    opacity: 0.15;
+    transform: scale(1.08);
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    clip-path: circle(120% at 50% 50%);
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .fb-slide {
   position: absolute;
   inset: 0;
@@ -353,17 +370,25 @@
   height: 100%;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.85s ease;
   pointer-events: none;
   z-index: 1;
+  clip-path: circle(0% at 50% 50%);
+  transition: opacity 0.6s ease;
+}
+
+.fb-slide.prev-active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+  clip-path: circle(120% at 50% 50%);
 }
 
 .fb-slide.active {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  position: relative;
-  z-index: 2;
+  z-index: 10;
+  animation: hero-iris-reveal 2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .fb-slide-img {
@@ -372,56 +397,11 @@
   object-fit: cover;
   object-position: center center;
   display: block;
-  will-change: transform;
-}
-
-/* Slide 1: Smooth Ken-Burns Slow Zoom In */
-.fb-slide[data-index="0"] .fb-slide-img {
-  transform: scale(1);
-  transition: transform 7s cubic-bezier(0.1, 0.9, 0.2, 1);
-}
-.fb-slide[data-index="0"].active .fb-slide-img {
-  transform: scale(1.08);
-}
-
-/* Slide 2: Smooth Horizontal Slow Pan + Scale */
-.fb-slide[data-index="1"] .fb-slide-img {
-  transform: scale(1.06) translateX(-18px);
-  transition: transform 7s cubic-bezier(0.1, 0.9, 0.2, 1);
-}
-.fb-slide[data-index="1"].active .fb-slide-img {
-  transform: scale(1.01) translateX(12px);
-}
-
-/* Slide 3: Dynamic Diagonal Float Zoom */
-.fb-slide[data-index="2"] .fb-slide-img {
-  transform: scale(1.08) translateY(-14px);
-  transition: transform 7s cubic-bezier(0.1, 0.9, 0.2, 1);
-}
-.fb-slide[data-index="2"].active .fb-slide-img {
-  transform: scale(1.01) translateY(8px);
-}
-
-/* Slide 4: Smooth Reverse Zoom Out */
-.fb-slide[data-index="3"] .fb-slide-img {
-  transform: scale(1.10);
-  transition: transform 7s cubic-bezier(0.1, 0.9, 0.2, 1);
-}
-.fb-slide[data-index="3"].active .fb-slide-img {
-  transform: scale(1);
-}
-
-/* Slide 5: Cinematic Lateral Float */
-.fb-slide[data-index="4"] .fb-slide-img {
-  transform: scale(1.05) translateX(18px);
-  transition: transform 7s cubic-bezier(0.1, 0.9, 0.2, 1);
-}
-.fb-slide[data-index="4"].active .fb-slide-img {
-  transform: scale(1.01) translateX(-12px);
+  will-change: transform, clip-path;
 }
 
 .cover-dot {
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .cover-dot.active {
   background-color: #0284c7 !important;
