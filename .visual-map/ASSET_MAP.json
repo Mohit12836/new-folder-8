@@ -1,0 +1,1621 @@
+{
+  "totalAssets": 202,
+  "assets": [
+    {
+      "src": "assets/images/logo.png",
+      "alt": "Belubeari Exim",
+      "usedIn": [
+        "about-us.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Ball-Bearing.jpg",
+      "alt": "About Belubeari Exim",
+      "usedIn": [
+        "about-us.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Bearings-and-Belts-for-the-Automation-Industry.jpg",
+      "alt": "Automation Industry Machinery and Bearing Solutions",
+      "usedIn": [
+        "automation-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Types-of-bearings-1.jpg",
+      "alt": "High Precision Bearings",
+      "usedIn": [
+        "automation-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/belts-1.jpg",
+      "alt": "Synchronous & Timing Belts",
+      "usedIn": [
+        "automation-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/linear-motion-bearing.jpeg",
+      "alt": "Linear Motion Guides",
+      "usedIn": [
+        "automation-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Kluber-Lubrication.jpg",
+      "alt": "Specialized High-Speed Greases",
+      "usedIn": [
+        "automation-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Material-Handling.jpg",
+      "alt": "Robotics & Cartesian Arms",
+      "usedIn": [
+        "automation-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Conveying-Systems.jpg",
+      "alt": "Automated Conveying & Sorters",
+      "usedIn": [
+        "automation-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Mixing-and-Grinding.jpg",
+      "alt": "Pick & Place Machinery",
+      "usedIn": [
+        "automation-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Packaging-Equipment.jpg",
+      "alt": "Packaging & Boxing Lines",
+      "usedIn": [
+        "automation-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/WhatsApp-Image-2026-04-14-at-4.59.png",
+      "alt": "Whatsapp Image 2026 04 14 At 4.59 - Belubeari Exim Mumbai",
+      "usedIn": [
+        "automotive-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/ball-bearings.jpg",
+      "alt": "Ball Bearing Variant",
+      "usedIn": [
+        "ball-bearing.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/various-ball-bearings-scaled-1.jpeg",
+      "alt": "Ball Bearing Variant",
+      "usedIn": [
+        "ball-bearing.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/ball-bearing-blog.jpg",
+      "alt": "Ball Bearing Variant",
+      "usedIn": [
+        "ball-bearing.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/roller-bearing-shaft.jpg",
+      "alt": "Ball Bearing Variant",
+      "usedIn": [
+        "ball-bearing.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Automotive-Industry.jpg",
+      "alt": "Automotive & Heavy Equipment",
+      "usedIn": [
+        "ball-bearing.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Chemical-Industry.jpeg",
+      "alt": "Chemical & Process Plants",
+      "usedIn": [
+        "ball-bearing.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Food-Industry.jpg",
+      "alt": "Food & Beverage Processing",
+      "usedIn": [
+        "ball-bearing.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Hydropower-Industry.jpg",
+      "alt": "Hydropower & Energy Sector",
+      "usedIn": [
+        "ball-bearing.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Pharmaceutical-Industry.jpg",
+      "alt": "Pharmaceutical Manufacturing",
+      "usedIn": [
+        "ball-bearing.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Cement-Industry-1.jpg",
+      "alt": "Cement Industry Machinery and Bearing Solutions",
+      "usedIn": [
+        "cement-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Petrochemical-Studbolts.jpg",
+      "alt": "Fasteners & Bearing Units",
+      "usedIn": [
+        "cement-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/O-Ring-Feature.jpg",
+      "alt": "Seals & O-Ring Products",
+      "usedIn": [
+        "cement-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/6.jpg",
+      "alt": "Rubber Emery & Belting Solutions",
+      "usedIn": [
+        "cement-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Kiln-Operation.jpeg",
+      "alt": "Kiln Operation",
+      "usedIn": [
+        "cement-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Packaging-and-Shipping.jpg",
+      "alt": "Packaging And Shipping",
+      "usedIn": [
+        "cement-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Chemical-Industry.jpg",
+      "alt": "Chemical Industry Machinery and Bearing Solutions",
+      "usedIn": [
+        "chemical-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Socket-Screws.jpg",
+      "alt": "Fasteners & Bearing Units",
+      "usedIn": [
+        "chemical-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/O-ringen.jpg",
+      "alt": "Seals & O-Ring Products",
+      "usedIn": [
+        "chemical-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/THK-Lubrication.jpg",
+      "alt": "Lubrication Oil & Grease",
+      "usedIn": [
+        "chemical-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/3.jpg",
+      "alt": "Rubber Emery & Belting Solutions",
+      "usedIn": [
+        "chemical-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Processing-and-Mixing.jpg",
+      "alt": "Processing And Mixing",
+      "usedIn": [
+        "chemical-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Pumping-Systems.jpg",
+      "alt": "Pumping Systems",
+      "usedIn": [
+        "chemical-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Storage-Tanks.jpeg",
+      "alt": "Storage Tanks",
+      "usedIn": [
+        "chemical-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Material-Handling-1.jpg",
+      "alt": "Material Handling",
+      "usedIn": [
+        "chemical-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Belt2.jpg",
+      "alt": "Conveyor Belts Belubeari Exim Mumbai",
+      "usedIn": [
+        "conveyor-belts.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/conveyor-belt-types.jpg",
+      "alt": "Conveyor Belts Variant",
+      "usedIn": [
+        "conveyor-belts.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Flat-Belt-Conveyor.jpg",
+      "alt": "Conveyor Belts Variant",
+      "usedIn": [
+        "conveyor-belts.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Inclined-Belt-Conveyor.jpg",
+      "alt": "Conveyor Belts Variant",
+      "usedIn": [
+        "conveyor-belts.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Curved-Belt-Conveyor.jpg",
+      "alt": "Conveyor Belts Variant",
+      "usedIn": [
+        "conveyor-belts.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Cleated-Belt-Conveyor.webp",
+      "alt": "Conveyor Belts Variant",
+      "usedIn": [
+        "conveyor-belts.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Portable-Belt-Conveyor.webp",
+      "alt": "Conveyor Belts Variant",
+      "usedIn": [
+        "conveyor-belts.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/IMG-20260903-WA0023.jpg",
+      "alt": "Cots & Apron Belubeari Exim Mumbai",
+      "usedIn": [
+        "cots-apron.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/5.jpg",
+      "alt": "Cots & Apron Variant",
+      "usedIn": [
+        "cots-apron.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/4.jpg",
+      "alt": "Cots & Apron Variant",
+      "usedIn": [
+        "cots-apron.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/flat-belt-blue-backed.jpg",
+      "alt": "Flat Belts Belubeari Exim Mumbai",
+      "usedIn": [
+        "flat-belts.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/flat-belt-green-pvc.jpg",
+      "alt": "Flat Belts Variant",
+      "usedIn": [
+        "flat-belts.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Food-Industry.jpeg",
+      "alt": "Food Industry Machinery and Bearing Solutions",
+      "usedIn": [
+        "food-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Structural-Assemblies.jpg",
+      "alt": "Fasteners & Bearing Units",
+      "usedIn": [
+        "food-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/static-seal_0011.jpg",
+      "alt": "Seals & O-Ring Products",
+      "usedIn": [
+        "food-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/orings.jpg",
+      "alt": "Lubrication Oil & Grease",
+      "usedIn": [
+        "food-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Processing-and-Mixing-1.jpg",
+      "alt": "Processing And Mixing",
+      "usedIn": [
+        "food-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Material-Handling-2.jpg",
+      "alt": "Material Handling",
+      "usedIn": [
+        "food-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Glass-Industry.jpg",
+      "alt": "Glass Industry Machinery and Bearing Solutions",
+      "usedIn": [
+        "glass-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Hex-Nuts.jpg",
+      "alt": "Fasteners & Bearing Units",
+      "usedIn": [
+        "glass-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Shell-Lubrication.jpeg",
+      "alt": "Lubrication Oil & Grease",
+      "usedIn": [
+        "glass-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/5-1.jpg",
+      "alt": "Rubber Emery & Belting Solutions",
+      "usedIn": [
+        "glass-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Melting-and-Forming.jpg",
+      "alt": "Melting And Forming",
+      "usedIn": [
+        "glass-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Annealing-and-Tempering.jpg",
+      "alt": "Annealing And Tempering",
+      "usedIn": [
+        "glass-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Cutting-and-Finishing.jpg",
+      "alt": "Cutting And Finishing",
+      "usedIn": [
+        "glass-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Material-Handling-3.jpg",
+      "alt": "Material Handling",
+      "usedIn": [
+        "glass-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Turbine-Operation.jpeg",
+      "alt": "Turbine Operation",
+      "usedIn": [
+        "hydropower-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Power-Generation.jpg",
+      "alt": "Power Generation",
+      "usedIn": [
+        "hydropower-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Maintenance-and-Repairs.jpg",
+      "alt": "Maintenance And Repairs",
+      "usedIn": [
+        "hydropower-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Material-Handling.png",
+      "alt": "Material Handling",
+      "usedIn": [
+        "hydropower-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/covers/cover_1.png",
+      "alt": "M/s Belubeari Exim - Built for Tomorrow Power Transmission",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/covers/cover_2.png",
+      "alt": "Powering Industry - Industrial Belts & Bearings Supply",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/covers/cover_3.png",
+      "alt": "Keep Your Industry Moving - Precision Power Transmission",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/covers/cover_4.png",
+      "alt": "Industrial Conveyor & Belting Solutions",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/covers/cover_5.png",
+      "alt": "Premium Industrial Bearings & Engineering Supply",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Cement-Industry.jpg",
+      "alt": "Cement Industry Belubeari Exim",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Marine-Industry.jpg",
+      "alt": "Marine Industry Belubeari Exim",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Metalworking.jpg",
+      "alt": "Metalworking Belubeari Exim",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Mining-Industry.jpg",
+      "alt": "Mining Industry Belubeari Exim",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Oil-Gas-Industry.jpg",
+      "alt": "Oil & Gas Industry Belubeari Exim",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Overhead-Cranes.jpg",
+      "alt": "Overhead Cranes Belubeari Exim",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Paper-Industry.jpg",
+      "alt": "Paper Industry Belubeari Exim",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Pharmaceutical-Industry.webp",
+      "alt": "Pharmaceutical Industry Belubeari Exim",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Railway-Industry.jpg",
+      "alt": "Railway Industry Belubeari Exim",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Rubber-And-Plastics-Industry.jpeg",
+      "alt": "Rubber and Plastics Belubeari Exim",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Steel-Industry.webp",
+      "alt": "Steel Industry Belubeari Exim",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Textile-Industry.jpg",
+      "alt": "Textile Industry Belubeari Exim",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Wind-Power-Industry.jpeg",
+      "alt": "Wind Power Industry Belubeari Exim",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Wire-Drawing-Industry.jpg",
+      "alt": "Wire Drawing Industry Belubeari Exim",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Wood-Industry.webp",
+      "alt": "Wood Industry Belubeari Exim",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/04_white_ball_bearings.jpg",
+      "alt": "Ball Bearing Belubeari Exim",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/gates-powergrip-gt4-heavy-duty-timing-belt.jpg",
+      "alt": "Timing Belts Belubeari Exim",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/pvc-green-cleated-conveyor-belts-collage.jpg",
+      "alt": "Conveyor Belts Belubeari Exim",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/03_white_v_belts_set.jpg",
+      "alt": "V-Belts Belubeari Exim",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/07_white_flat_transmission_belts.jpg",
+      "alt": "Flat Belts Belubeari Exim",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/04_deep_groove_ball_bearings.jpg",
+      "alt": "Linear Motion Bearings Belubeari Exim",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/05_white_pillow_block.jpg",
+      "alt": "Pillow Block Bearings Belubeari Exim",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Industrial-grease.jpg",
+      "alt": "Oil & Grease Belubeari Exim",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/09_white_oil_seals_orings.jpg",
+      "alt": "Seals & O-Ring Belubeari Exim",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/msb-kureha-textile-cots-and-aprons.jpg",
+      "alt": "Cots & Aprons Belubeari Exim",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/usibo-rubber-emery-strips-roller-coverings-profiles.jpg",
+      "alt": "Rubber Emery Roller Covering Belubeari Exim",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/08_white_linatex_coated_belts.jpg",
+      "alt": "Special Coated Belts Belubeari Exim",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/sasas.jpeg",
+      "alt": "Industrial Plant",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/GATES.jpg",
+      "alt": "Gates",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/IMG-20260903-WA0013.jpg",
+      "alt": "Synchronous Timing Belt",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/CONTINENTAL.jpg",
+      "alt": "Continental",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/IMG-20260903-WA0014.jpg",
+      "alt": "Poly-V Belt",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/MITSUBOSHI.jpg",
+      "alt": "Mitsuboshi",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/IMG-20260903-WA0015.jpg",
+      "alt": "Cogged V-Belt",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/SKF.jpg",
+      "alt": "SKF Bearings",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/FAG.jpg",
+      "alt": "FAG Bearings",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/TIMKEN.jpg",
+      "alt": "Timken Bearings",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/NACHI.jpg",
+      "alt": "Nachi Bearings",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/IJK.jpg",
+      "alt": "IJK Bearings",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/NMB.jpg",
+      "alt": "NMB Minebea Bearings",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/FENNER.jpg",
+      "alt": "JK Fenner Belts",
+      "usedIn": [
+        "index.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/3a2d4baf2d014f96bda2bf5f141e7cdc.jpg",
+      "alt": "Linear Motion Bearing Belubeari Exim Mumbai",
+      "usedIn": [
+        "linear-motion-bearing.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/images-1.jpg",
+      "alt": "Linear Motion Bearing Variant",
+      "usedIn": [
+        "linear-motion-bearing.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/images-2.jpg",
+      "alt": "Linear Motion Bearing Variant",
+      "usedIn": [
+        "linear-motion-bearing.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/images-3.jpg",
+      "alt": "Linear Motion Bearing Variant",
+      "usedIn": [
+        "linear-motion-bearing.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/images.jpg",
+      "alt": "Linear Motion Bearing Variant",
+      "usedIn": [
+        "linear-motion-bearing.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "https://raysinternational.net/wp-content/uploads/2024/06/achievement.png",
+      "alt": "Achievement - Belubeari Exim Mumbai",
+      "usedIn": [
+        "lubrications-oil-grease.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "https://raysinternational.net/wp-content/uploads/2024/06/versatility.png",
+      "alt": "Versatility - Belubeari Exim Mumbai",
+      "usedIn": [
+        "lubrications-oil-grease.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Innovative-Solutions.png",
+      "alt": "Innovative Solutions - Belubeari Exim Mumbai",
+      "usedIn": [
+        "lubrications-oil-grease.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "https://raysinternational.net/wp-content/uploads/2024/06/machining.png",
+      "alt": "Machining - Belubeari Exim Mumbai",
+      "usedIn": [
+        "lubrications-oil-grease.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Manufacturing.jpg",
+      "alt": "Manufacturing - Belubeari Exim Mumbai",
+      "usedIn": [
+        "lubrications-oil-grease.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "https://raysinternational.net/wp-content/uploads/2024/06/Industrial-Machinery.jpg",
+      "alt": "Industrial Machinery - Belubeari Exim Mumbai",
+      "usedIn": [
+        "lubrications-oil-grease.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Hex-Bolts-Screws.jpg",
+      "alt": "Fasteners & Bearing Units",
+      "usedIn": [
+        "marine-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/rubber-gaskets.jpg",
+      "alt": "Seals & O-Ring Products",
+      "usedIn": [
+        "marine-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Shipbuilding-and-Repair.jpg",
+      "alt": "Shipbuilding And Repair",
+      "usedIn": [
+        "marine-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Offshore-Platforms.jpg",
+      "alt": "Offshore Platforms",
+      "usedIn": [
+        "marine-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Marine-Engines.jpg",
+      "alt": "Marine Engines",
+      "usedIn": [
+        "marine-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Material-Handling-4.jpg",
+      "alt": "Material Handling",
+      "usedIn": [
+        "marine-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Machining-and-Forming.jpg",
+      "alt": "Machining And Forming",
+      "usedIn": [
+        "metalworking.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Heat-Treatment.jpg",
+      "alt": "Heat Treatment",
+      "usedIn": [
+        "metalworking.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Cutting-and-Finishing-1.jpg",
+      "alt": "Cutting And Finishing",
+      "usedIn": [
+        "metalworking.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Material-Handling-5.jpg",
+      "alt": "Material Handling",
+      "usedIn": [
+        "metalworking.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Extraction-and-Drilling.png",
+      "alt": "Extraction And Drilling",
+      "usedIn": [
+        "mining-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Conveying-and-Hauling.jpg",
+      "alt": "Conveying And Hauling",
+      "usedIn": [
+        "mining-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Crushing-and-Grinding.jpg",
+      "alt": "Crushing And Grinding",
+      "usedIn": [
+        "mining-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Material-Handling.jpeg",
+      "alt": "Material Handling",
+      "usedIn": [
+        "mining-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Seals-O-Ring.jpg",
+      "alt": "Seals & O-Ring Products",
+      "usedIn": [
+        "oil-gas-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Exploration-and-Drilling.jpg",
+      "alt": "Exploration And Drilling",
+      "usedIn": [
+        "oil-gas-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Production-and-Refining.jpg",
+      "alt": "Production And Refining",
+      "usedIn": [
+        "oil-gas-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Pipeline-Systems.jpg",
+      "alt": "Pipeline Systems",
+      "usedIn": [
+        "oil-gas-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Material-Handling-6.jpg",
+      "alt": "Material Handling",
+      "usedIn": [
+        "oil-gas-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Hydraulic-oil.jpg",
+      "alt": "Oil & Grease Variant",
+      "usedIn": [
+        "oil-grease.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Industrial-oils-and-greases.jpg",
+      "alt": "Oil & Grease Variant",
+      "usedIn": [
+        "oil-grease.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Industrial-gear-oil.jpg",
+      "alt": "Oil & Grease Variant",
+      "usedIn": [
+        "oil-grease.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Cutting-oil.jpg",
+      "alt": "Oil & Grease Variant",
+      "usedIn": [
+        "oil-grease.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Lubricant-drums.jpg",
+      "alt": "Oil & Grease Variant",
+      "usedIn": [
+        "oil-grease.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Lifting-and-Hoisting.jpg",
+      "alt": "Lifting And Hoisting",
+      "usedIn": [
+        "overhead-cranes.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Trolley-and-Bridge-Motion.jpg",
+      "alt": "Trolley And Bridge Motion",
+      "usedIn": [
+        "overhead-cranes.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Safety-Mechanisms.jpg",
+      "alt": "Safety Mechanisms",
+      "usedIn": [
+        "overhead-cranes.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Material-Handling-7.jpg",
+      "alt": "Material Handling",
+      "usedIn": [
+        "overhead-cranes.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Stainless-Steel.jpg",
+      "alt": "Fasteners & Bearing Units",
+      "usedIn": [
+        "paper-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Pulping-and-Mixing.jpeg",
+      "alt": "Pulping And Mixing",
+      "usedIn": [
+        "paper-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Paper-Machine-Operations.jpg",
+      "alt": "Paper Machine Operations",
+      "usedIn": [
+        "paper-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Finishing-and-Coating.jpg",
+      "alt": "Finishing And Coating",
+      "usedIn": [
+        "paper-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Material-Handling-1.jpeg",
+      "alt": "Material Handling",
+      "usedIn": [
+        "paper-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Mixing-and-Blending.jpg",
+      "alt": "Mixing And Blending",
+      "usedIn": [
+        "pharmaceutical-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Tablet-and-Capsule-Production.jpg",
+      "alt": "Tablet And Capsule Production",
+      "usedIn": [
+        "pharmaceutical-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Packaging-Equipment-1.jpg",
+      "alt": "Packaging Equipment",
+      "usedIn": [
+        "pharmaceutical-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Material-Handling-14.jpg",
+      "alt": "Material Handling",
+      "usedIn": [
+        "pharmaceutical-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/SAF-Split-pillow-block-bearing-assembly-optimized-1200px-cropped-.jpg",
+      "alt": "Pillow Block Bearing Belubeari Exim Mumbai",
+      "usedIn": [
+        "pillow-block-bearing.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Pillow-Block-Bearing.jpg",
+      "alt": "Pillow Block Bearing Variant",
+      "usedIn": [
+        "pillow-block-bearing.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/images-4.jpg",
+      "alt": "Pillow Block Bearing Variant",
+      "usedIn": [
+        "pillow-block-bearing.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Track-and-Infrastructure.jpg",
+      "alt": "Track And Infrastructure",
+      "usedIn": [
+        "railway-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Rolling-Stock.jpg",
+      "alt": "Rolling Stock",
+      "usedIn": [
+        "railway-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Maintenance-Equipment.jpeg",
+      "alt": "Maintenance Equipment",
+      "usedIn": [
+        "railway-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Material-Handling-13.jpg",
+      "alt": "Material Handling",
+      "usedIn": [
+        "railway-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Mixing-and-Compounding.jpg",
+      "alt": "Mixing And Compounding",
+      "usedIn": [
+        "rubber-and-plastics-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Molding-and-Extrusion.jpg",
+      "alt": "Molding And Extrusion",
+      "usedIn": [
+        "rubber-and-plastics-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Finishing-and-Assembly.jpg",
+      "alt": "Finishing And Assembly",
+      "usedIn": [
+        "rubber-and-plastics-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Material-Handling-12.jpg",
+      "alt": "Material Handling",
+      "usedIn": [
+        "rubber-and-plastics-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/6-1.jpg",
+      "alt": "Rubber Emery/Roller Covering Variant",
+      "usedIn": [
+        "rubber-emery-roller-covering.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/special-coated-studded.jpg",
+      "alt": "Special Coated Belts Belubeari Exim Mumbai",
+      "usedIn": [
+        "special-coated-belts.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/special-coated-red-pmu.jpg",
+      "alt": "Special Coated Belts Variant",
+      "usedIn": [
+        "special-coated-belts.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/special-coated-sponge.jpg",
+      "alt": "Special Coated Belts Variant",
+      "usedIn": [
+        "special-coated-belts.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Melting-and-Casting.jpg",
+      "alt": "Melting And Casting",
+      "usedIn": [
+        "steel-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Rolling-and-Forming.jpg",
+      "alt": "Rolling And Forming",
+      "usedIn": [
+        "steel-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Finishing-and-Coating-2.jpg",
+      "alt": "Finishing And Coating",
+      "usedIn": [
+        "steel-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Material-Handling-11.jpg",
+      "alt": "Material Handling",
+      "usedIn": [
+        "steel-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Spinning-and-Weaving.jpg",
+      "alt": "Spinning And Weaving",
+      "usedIn": [
+        "textile-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Dyeing-and-Finishing.jpg",
+      "alt": "Dyeing And Finishing",
+      "usedIn": [
+        "textile-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Printing-and-Coating.jpg",
+      "alt": "Printing And Coating",
+      "usedIn": [
+        "textile-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Material-Handling-10.jpg",
+      "alt": "Material Handling",
+      "usedIn": [
+        "textile-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Belt.jpg",
+      "alt": "Timing Belts Belubeari Exim Mumbai",
+      "usedIn": [
+        "timing-belts.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/timing-belt-blue-pu.jpg",
+      "alt": "Timing Belts Variant",
+      "usedIn": [
+        "timing-belts.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/timing-belt-h-pitch.jpg",
+      "alt": "Timing Belts Variant",
+      "usedIn": [
+        "timing-belts.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/timing-belt-5m-paz.jpg",
+      "alt": "Timing Belts Variant",
+      "usedIn": [
+        "timing-belts.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/timing-belt-pu-double.jpg",
+      "alt": "Timing Belts Variant",
+      "usedIn": [
+        "timing-belts.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/v-belt-red-round.jpg",
+      "alt": "V-Belts Belubeari Exim Mumbai",
+      "usedIn": [
+        "v-belts.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/belts.jpg",
+      "alt": "V-Belts Variant",
+      "usedIn": [
+        "v-belts.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Turbine-Blades-and-Rotors.jpg",
+      "alt": "Turbine Blades And Rotors",
+      "usedIn": [
+        "wind-power-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Gearboxes-and-Generators.jpg",
+      "alt": "Gearboxes And Generators",
+      "usedIn": [
+        "wind-power-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Tower-and-Foundation.jpg",
+      "alt": "Tower And Foundation",
+      "usedIn": [
+        "wind-power-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Maintenance-Equipment.jpg",
+      "alt": "Maintenance Equipment",
+      "usedIn": [
+        "wind-power-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Drawing-Machines.jpg",
+      "alt": "Drawing Machines",
+      "usedIn": [
+        "wire-drawing-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Annealing-and-Coating.jpg",
+      "alt": "Annealing And Coating",
+      "usedIn": [
+        "wire-drawing-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Spooling-and-Winding.jpg",
+      "alt": "Spooling And Winding",
+      "usedIn": [
+        "wire-drawing-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Material-Handling-9.jpg",
+      "alt": "Material Handling",
+      "usedIn": [
+        "wire-drawing-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Sawmilling-and-Cutting.jpg",
+      "alt": "Sawmilling And Cutting",
+      "usedIn": [
+        "wood-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Planing-and-Shaping.jpg",
+      "alt": "Planing And Shaping",
+      "usedIn": [
+        "wood-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Finishing-and-Coating-1.jpg",
+      "alt": "Finishing And Coating",
+      "usedIn": [
+        "wood-industry.html"
+      ],
+      "type": "image"
+    },
+    {
+      "src": "assets/images/Material-Handling-8.jpg",
+      "alt": "Material Handling",
+      "usedIn": [
+        "wood-industry.html"
+      ],
+      "type": "image"
+    }
+  ]
+}

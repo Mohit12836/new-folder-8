@@ -1,0 +1,28 @@
+{
+  "colors": {
+    "primary": "#0284c7 (Royal Blue)",
+    "gold_accent": "#fbbf24 (24K Gold)",
+    "obsidian_dark": "#050914 (Slate-950)",
+    "whatsapp_green": "#10b981 / #059669",
+    "text_primary": "#0f172a (Charcoal Slate)",
+    "text_light": "#ffffff (Pure White)"
+  },
+  "typography": {
+    "headings": "Arial, Helvetica Neue, sans-serif",
+    "body": "Arial, Helvetica Neue, sans-serif"
+  },
+  "radius": [
+    "6px",
+    "8px",
+    "12px",
+    "16px",
+    "9999px"
+  ],
+  "shadows": [
+    "shadow-sm",
+    "shadow-md",
+    "shadow-xl",
+    "shadow-2xl",
+    "drop-shadow-md"
+  ]
+}
