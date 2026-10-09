@@ -471,20 +471,26 @@ function toggleMobileSubmenu(submenuId, btn) {
   const submenu = document.getElementById(submenuId);
   if (!submenu) return;
   
-  const isHidden = submenu.classList.contains('hidden');
+  // Check if currently hidden
+  const isHidden = submenu.classList.contains('hidden') || window.getComputedStyle(submenu).display === 'none' || submenu.style.display === 'none';
   
-  // Toggle current submenu
   if (isHidden) {
     submenu.classList.remove('hidden');
+    submenu.style.display = 'block';
     if (btn) {
-      const chevron = btn.querySelector('i.fa-chevron-down');
+      const chevron = btn.querySelector('.submenu-chevron') || btn.querySelector('.fa-chevron-down') || btn.querySelector('i:last-child');
       if (chevron) chevron.style.transform = 'rotate(180deg)';
+      const tag = btn.querySelector('.tap-tag');
+      if (tag) tag.innerText = 'Hide ▲';
     }
   } else {
     submenu.classList.add('hidden');
+    submenu.style.display = 'none';
     if (btn) {
-      const chevron = btn.querySelector('i.fa-chevron-down');
+      const chevron = btn.querySelector('.submenu-chevron') || btn.querySelector('.fa-chevron-down') || btn.querySelector('i:last-child');
       if (chevron) chevron.style.transform = 'rotate(0deg)';
+      const tag = btn.querySelector('.tap-tag');
+      if (tag) tag.innerText = 'Tap ▼';
     }
   }
 }

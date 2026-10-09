@@ -524,12 +524,12 @@ function toggleMobileNavDrawer() {
 function toggleMobileSubmenu(submenuId, btn) {
   var sm = document.getElementById(submenuId);
   if (!sm) return;
-  var isCurrentlyHidden = sm.style.display === 'none' || sm.classList.contains('hidden');
-  if (isCurrentlyHidden) {
+  var isHidden = sm.classList.contains('hidden') || window.getComputedStyle(sm).display === 'none' || sm.style.display === 'none';
+  if (isHidden) {
     sm.classList.remove('hidden');
     sm.style.display = 'block';
     if (btn) {
-      var ch = btn.querySelector('.submenu-chevron');
+      var ch = btn.querySelector('.submenu-chevron') || btn.querySelector('.fa-chevron-down') || btn.querySelector('i:last-child');
       if (ch) ch.style.transform = 'rotate(180deg)';
       var tag = btn.querySelector('.tap-tag');
       if (tag) tag.innerText = 'Hide ▲';
@@ -538,7 +538,7 @@ function toggleMobileSubmenu(submenuId, btn) {
     sm.classList.add('hidden');
     sm.style.display = 'none';
     if (btn) {
-      var ch = btn.querySelector('.submenu-chevron');
+      var ch = btn.querySelector('.submenu-chevron') || btn.querySelector('.fa-chevron-down') || btn.querySelector('i:last-child');
       if (ch) ch.style.transform = 'rotate(0deg)';
       var tag = btn.querySelector('.tap-tag');
       if (tag) tag.innerText = 'Tap ▼';
@@ -586,6 +586,7 @@ window.toggleMobileSubmenu = toggleMobileSubmenu;
 </div>
 </div>
 </div>
+<!-- 🌟 24K ROYAL LIQUID GOLD EMBOSSED NAVIGATION BAR 🌟 -->
 <!-- 🌟 24K ROYAL LIQUID GOLD EMBOSSED NAVIGATION BAR 🌟 -->
 <!-- 🌟 24K ROYAL LIQUID GOLD EMBOSSED NAVIGATION BAR 🌟 -->
 <!-- 🌟 24K ROYAL LIQUID GOLD EMBOSSED NAVIGATION BAR 🌟 -->
@@ -711,7 +712,7 @@ window.toggleMobileSubmenu = toggleMobileSubmenu;
 </div>
 </button>
 <!-- Products Sub-Buttons List -->
-<div class="mobile-submenu px-2 pb-2.5 pt-1 space-y-1 bg-slate-950 border-t border-slate-800 max-h-64 overflow-y-auto" id="mobile-products-submenu" style="display: none;">
+<div class="hidden mobile-submenu px-2 pb-2.5 pt-1 space-y-1 bg-slate-950 border-t border-slate-800 max-h-64 overflow-y-auto" id="mobile-products-submenu">
 <a class="flex items-center justify-between p-2 rounded bg-sky-950/60 border border-sky-800/60 text-sky-300 text-xs font-bold" href="products.html">
 <span>★ All 12 Products Page</span><i class="fa-solid fa-arrow-right text-[10px] text-sky-400"></i>
 </a>
@@ -740,7 +741,7 @@ window.toggleMobileSubmenu = toggleMobileSubmenu;
 </div>
 </button>
 <!-- Industries Sub-Buttons List -->
-<div class="mobile-submenu px-2 pb-2.5 pt-1 space-y-1 bg-slate-950 border-t border-slate-800 max-h-64 overflow-y-auto" id="mobile-industries-submenu" style="display: none;">
+<div class="hidden mobile-submenu px-2 pb-2.5 pt-1 space-y-1 bg-slate-950 border-t border-slate-800 max-h-64 overflow-y-auto" id="mobile-industries-submenu">
 <a class="flex items-center justify-between p-2 rounded bg-sky-950/60 border border-sky-800/60 text-sky-300 text-xs font-bold" href="industries.html">
 <span>★ All 20 Industries Page</span><i class="fa-solid fa-arrow-right text-[10px] text-sky-400"></i>
 </a>
