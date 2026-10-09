@@ -459,13 +459,36 @@ function toggleMobileNavDrawer() {
   drawer.classList.toggle('hidden');
   if (icon) {
     if (drawer.classList.contains('hidden')) {
-      icon.className = 'fa-solid fa-bars text-lg text-slate-800';
+      icon.className = 'fa-solid fa-bars text-sm sm:text-base text-amber-300';
     } else {
-      icon.className = 'fa-solid fa-xmark text-lg text-[#0284c7]';
+      icon.className = 'fa-solid fa-xmark text-sm sm:text-base text-amber-300';
     }
   }
 }
 window.toggleMobileNavDrawer = toggleMobileNavDrawer;
+
+function toggleMobileSubmenu(submenuId, btn) {
+  const submenu = document.getElementById(submenuId);
+  if (!submenu) return;
+  
+  const isHidden = submenu.classList.contains('hidden');
+  
+  // Toggle current submenu
+  if (isHidden) {
+    submenu.classList.remove('hidden');
+    if (btn) {
+      const chevron = btn.querySelector('i.fa-chevron-down');
+      if (chevron) chevron.style.transform = 'rotate(180deg)';
+    }
+  } else {
+    submenu.classList.add('hidden');
+    if (btn) {
+      const chevron = btn.querySelector('i.fa-chevron-down');
+      if (chevron) chevron.style.transform = 'rotate(0deg)';
+    }
+  }
+}
+window.toggleMobileSubmenu = toggleMobileSubmenu;
 
 /* --------------------------------------------------------------------------
  * 10. UNDER-NAVBAR ANIMATED BRAND PICTURE CAROUSEL

@@ -481,6 +481,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <article class="post-449 page type-page status-publish ast-article-single" id="post-449" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
 <!-- 🌟 24K ROYAL LIQUID GOLD EMBOSSED NAVIGATION BAR 🌟 -->
 <!-- 🌟 24K ROYAL LIQUID GOLD EMBOSSED NAVIGATION BAR 🌟 -->
+<!-- 🌟 24K ROYAL LIQUID GOLD EMBOSSED NAVIGATION BAR 🌟 -->
 <header class="sticky top-0 z-50 navbar-royal-gold transition-all">
 <!-- 24K Golden Laser Shimmer Patti -->
 <div class="golden-laser-patti"></div>
@@ -576,41 +577,99 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </button>
 </div>
 </div>
-<!-- HIGH-END MOBILE NAVIGATION DRAWER -->
-<div class="hidden lg:hidden bg-slate-950 border-t border-amber-400/30 text-white px-4 py-5 space-y-4 shadow-2xl transition-all" id="mobile-nav-drawer">
-<!-- Top Main Links -->
-<div class="grid grid-cols-2 gap-2 text-xs font-bold uppercase">
-<a class="p-2.5 rounded-lg bg-slate-900 text-sky-400 border border-slate-800 flex items-center gap-2" href="index.html">
-<i class="fa-solid fa-house text-xs"></i> Home
+<!-- HIGH-END MOBILE NAVIGATION DRAWER WITH ACCORDION SUB-MENUS -->
+<div class="hidden lg:hidden bg-slate-950 border-t border-amber-400/30 text-white px-3.5 py-4 space-y-2.5 shadow-2xl transition-all max-h-[85vh] overflow-y-auto" id="mobile-nav-drawer">
+<!-- Navigation Links & Accordions -->
+<div class="space-y-1.5">
+<!-- Home -->
+<a class="p-2.5 rounded-lg bg-slate-900/90 text-white hover:text-sky-400 border border-slate-800 flex items-center justify-between font-bold text-xs uppercase" href="index.html">
+<span class="flex items-center gap-2"><i class="fa-solid fa-house text-amber-400 text-xs"></i> Home</span>
+<i class="fa-solid fa-chevron-right text-[10px] text-slate-500"></i>
 </a>
-<a class="p-2.5 rounded-lg bg-slate-900/60 hover:bg-slate-900 text-slate-200 border border-slate-800/80 flex items-center gap-2" href="about-us.html">
-<i class="fa-solid fa-building text-xs"></i> About Us
+
+<!-- About Us -->
+<a class="p-2.5 rounded-lg bg-slate-900/90 text-white hover:text-sky-400 border border-slate-800 flex items-center justify-between font-bold text-xs uppercase" href="about-us.html">
+<span class="flex items-center gap-2"><i class="fa-solid fa-building text-amber-400 text-xs"></i> About Us</span>
+<i class="fa-solid fa-chevron-right text-[10px] text-slate-500"></i>
 </a>
-<a class="p-2.5 rounded-lg bg-slate-900/60 hover:bg-slate-900 text-slate-200 border border-slate-800/80 flex items-center gap-2" href="products.html">
-<i class="fa-solid fa-boxes-stacked text-xs"></i> Products (12)
+
+<!-- Products (Expandable Accordion) -->
+<div class="border border-slate-800 rounded-lg overflow-hidden bg-slate-900/80">
+<div class="p-2.5 flex items-center justify-between cursor-pointer mobile-submenu-btn hover:bg-slate-800 transition" onclick="toggleMobileSubmenu('mobile-products-submenu', this)">
+<span class="flex items-center gap-2 font-bold text-xs uppercase text-white"><i class="fa-solid fa-boxes-stacked text-amber-400 text-xs"></i> Products (12 Lines)</span>
+<div class="flex items-center gap-1.5">
+<span class="text-[9px] font-mono text-amber-300 bg-amber-950/60 px-1.5 py-0.5 rounded border border-amber-400/40">Tap ▼</span>
+<i class="fa-solid fa-chevron-down text-xs text-amber-400 transition-transform duration-300"></i>
+</div>
+</div>
+<!-- Products Sub-Buttons List -->
+<div class="hidden mobile-submenu px-2 pb-2.5 pt-1 space-y-1 bg-slate-950 border-t border-slate-800 max-h-64 overflow-y-auto" id="mobile-products-submenu">
+<a class="flex items-center justify-between p-2 rounded bg-sky-950/60 border border-sky-800/60 text-sky-300 text-xs font-bold" href="products.html">
+<span>★ All 12 Products Page</span><i class="fa-solid fa-arrow-right text-[10px] text-sky-400"></i>
 </a>
-<a class="p-2.5 rounded-lg bg-slate-900/60 hover:bg-slate-900 text-slate-200 border border-slate-800/80 flex items-center gap-2" href="brands.html">
-<i class="fa-solid fa-award text-xs"></i> Brands
-</a>
-<a class="p-2.5 rounded-lg bg-slate-900/60 hover:bg-slate-900 text-slate-200 border border-slate-800/80 flex items-center gap-2" href="industries.html">
-<i class="fa-solid fa-industry text-xs"></i> Industries (20)
-</a>
-<a class="p-2.5 rounded-lg bg-slate-900/60 hover:bg-slate-900 text-slate-200 border border-slate-800/80 flex items-center gap-2" href="contact-us.html">
-<i class="fa-solid fa-phone-volume text-xs"></i> Contact Us
-</a>
+<a class="flex items-center justify-between p-2 rounded bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-white text-xs" href="ball-bearing.html"><span>• Ball Bearing</span><i class="fa-solid fa-chevron-right text-[9px] text-slate-500"></i></a>
+<a class="flex items-center justify-between p-2 rounded bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-white text-xs" href="timing-belts.html"><span>• Timing Belts</span><i class="fa-solid fa-chevron-right text-[9px] text-slate-500"></i></a>
+<a class="flex items-center justify-between p-2 rounded bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-white text-xs" href="conveyor-belts.html"><span>• Conveyor Belts</span><i class="fa-solid fa-chevron-right text-[9px] text-slate-500"></i></a>
+<a class="flex items-center justify-between p-2 rounded bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-white text-xs" href="v-belts.html"><span>• V-Belts</span><i class="fa-solid fa-chevron-right text-[9px] text-slate-500"></i></a>
+<a class="flex items-center justify-between p-2 rounded bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-white text-xs" href="flat-belts.html"><span>• Flat Belts</span><i class="fa-solid fa-chevron-right text-[9px] text-slate-500"></i></a>
+<a class="flex items-center justify-between p-2 rounded bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-white text-xs" href="linear-motion-bearing.html"><span>• Linear Motion Bearing</span><i class="fa-solid fa-chevron-right text-[9px] text-slate-500"></i></a>
+<a class="flex items-center justify-between p-2 rounded bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-white text-xs" href="pillow-block-bearing.html"><span>• Pillow Block Bearing</span><i class="fa-solid fa-chevron-right text-[9px] text-slate-500"></i></a>
+<a class="flex items-center justify-between p-2 rounded bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-white text-xs" href="oil-grease.html"><span>• Oil &amp; Grease</span><i class="fa-solid fa-chevron-right text-[9px] text-slate-500"></i></a>
+<a class="flex items-center justify-between p-2 rounded bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-white text-xs" href="seals-o-ring.html"><span>• Seals &amp; O Ring</span><i class="fa-solid fa-chevron-right text-[9px] text-slate-500"></i></a>
+<a class="flex items-center justify-between p-2 rounded bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-white text-xs" href="cots-apron.html"><span>• Cots &amp; Apron</span><i class="fa-solid fa-chevron-right text-[9px] text-slate-500"></i></a>
+<a class="flex items-center justify-between p-2 rounded bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-white text-xs" href="rubber-emery-roller-covering.html"><span>• Rubber Emery / Roller Covering</span><i class="fa-solid fa-chevron-right text-[9px] text-slate-500"></i></a>
+<a class="flex items-center justify-between p-2 rounded bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-white text-xs" href="special-coated-belts.html"><span>• Special Coated Belts</span><i class="fa-solid fa-chevron-right text-[9px] text-slate-500"></i></a>
+</div>
 </div>
 
-<!-- Fast Product Shortcuts on Mobile -->
-<div class="pt-2 border-t border-slate-800/80">
-<div class="text-[10px] font-bold uppercase tracking-widest text-amber-400 mb-2 font-mono">Quick Category Links:</div>
-<div class="flex flex-wrap gap-1.5">
-<a href="ball-bearing.html" class="text-[10px] bg-slate-900 hover:bg-sky-900/40 text-slate-300 hover:text-sky-300 px-2.5 py-1 rounded border border-slate-800">Ball Bearing</a>
-<a href="timing-belts.html" class="text-[10px] bg-slate-900 hover:bg-sky-900/40 text-slate-300 hover:text-sky-300 px-2.5 py-1 rounded border border-slate-800">Timing Belts</a>
-<a href="conveyor-belts.html" class="text-[10px] bg-slate-900 hover:bg-sky-900/40 text-slate-300 hover:text-sky-300 px-2.5 py-1 rounded border border-slate-800">Conveyor Belts</a>
-<a href="v-belts.html" class="text-[10px] bg-slate-900 hover:bg-sky-900/40 text-slate-300 hover:text-sky-300 px-2.5 py-1 rounded border border-slate-800">V-Belts</a>
-<a href="linear-motion-bearing.html" class="text-[10px] bg-slate-900 hover:bg-sky-900/40 text-slate-300 hover:text-sky-300 px-2.5 py-1 rounded border border-slate-800">LM Guides</a>
-<a href="oil-grease.html" class="text-[10px] bg-slate-900 hover:bg-sky-900/40 text-slate-300 hover:text-sky-300 px-2.5 py-1 rounded border border-slate-800">Oil &amp; Grease</a>
+<!-- Industries (Expandable Accordion) -->
+<div class="border border-slate-800 rounded-lg overflow-hidden bg-slate-900/80">
+<div class="p-2.5 flex items-center justify-between cursor-pointer mobile-submenu-btn hover:bg-slate-800 transition" onclick="toggleMobileSubmenu('mobile-industries-submenu', this)">
+<span class="flex items-center gap-2 font-bold text-xs uppercase text-white"><i class="fa-solid fa-industry text-amber-400 text-xs"></i> Industries (20 Sectors)</span>
+<div class="flex items-center gap-1.5">
+<span class="text-[9px] font-mono text-amber-300 bg-amber-950/60 px-1.5 py-0.5 rounded border border-amber-400/40">Tap ▼</span>
+<i class="fa-solid fa-chevron-down text-xs text-amber-400 transition-transform duration-300"></i>
 </div>
+</div>
+<!-- Industries Sub-Buttons List -->
+<div class="hidden mobile-submenu px-2 pb-2.5 pt-1 space-y-1 bg-slate-950 border-t border-slate-800 max-h-64 overflow-y-auto" id="mobile-industries-submenu">
+<a class="flex items-center justify-between p-2 rounded bg-sky-950/60 border border-sky-800/60 text-sky-300 text-xs font-bold" href="industries.html">
+<span>★ All 20 Industries Page</span><i class="fa-solid fa-arrow-right text-[10px] text-sky-400"></i>
+</a>
+<a class="flex items-center justify-between p-2 rounded bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-white text-xs" href="automation-industry.html"><span>• Automation Industry</span><i class="fa-solid fa-chevron-right text-[9px] text-slate-500"></i></a>
+<a class="flex items-center justify-between p-2 rounded bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-white text-xs" href="cement-industry.html"><span>• Cement Industry</span><i class="fa-solid fa-chevron-right text-[9px] text-slate-500"></i></a>
+<a class="flex items-center justify-between p-2 rounded bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-white text-xs" href="chemical-industry.html"><span>• Chemical Industry</span><i class="fa-solid fa-chevron-right text-[9px] text-slate-500"></i></a>
+<a class="flex items-center justify-between p-2 rounded bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-white text-xs" href="food-industry.html"><span>• Food Industry</span><i class="fa-solid fa-chevron-right text-[9px] text-slate-500"></i></a>
+<a class="flex items-center justify-between p-2 rounded bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-white text-xs" href="glass-industry.html"><span>• Glass Industry</span><i class="fa-solid fa-chevron-right text-[9px] text-slate-500"></i></a>
+<a class="flex items-center justify-between p-2 rounded bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-white text-xs" href="hydropower-industry.html"><span>• Hydropower Industry</span><i class="fa-solid fa-chevron-right text-[9px] text-slate-500"></i></a>
+<a class="flex items-center justify-between p-2 rounded bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-white text-xs" href="marine-industry.html"><span>• Marine Industry</span><i class="fa-solid fa-chevron-right text-[9px] text-slate-500"></i></a>
+<a class="flex items-center justify-between p-2 rounded bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-white text-xs" href="metalworking.html"><span>• Metalworking</span><i class="fa-solid fa-chevron-right text-[9px] text-slate-500"></i></a>
+<a class="flex items-center justify-between p-2 rounded bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-white text-xs" href="mining-industry.html"><span>• Mining Industry</span><i class="fa-solid fa-chevron-right text-[9px] text-slate-500"></i></a>
+<a class="flex items-center justify-between p-2 rounded bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-white text-xs" href="oil-gas-industry.html"><span>• Oil &amp; Gas Industry</span><i class="fa-solid fa-chevron-right text-[9px] text-slate-500"></i></a>
+<a class="flex items-center justify-between p-2 rounded bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-white text-xs" href="overhead-cranes.html"><span>• Overhead Cranes</span><i class="fa-solid fa-chevron-right text-[9px] text-slate-500"></i></a>
+<a class="flex items-center justify-between p-2 rounded bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-white text-xs" href="paper-industry.html"><span>• Paper Industry</span><i class="fa-solid fa-chevron-right text-[9px] text-slate-500"></i></a>
+<a class="flex items-center justify-between p-2 rounded bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-white text-xs" href="pharmaceutical-industry.html"><span>• Pharmaceutical Industry</span><i class="fa-solid fa-chevron-right text-[9px] text-slate-500"></i></a>
+<a class="flex items-center justify-between p-2 rounded bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-white text-xs" href="railway-industry.html"><span>• Railway Industry</span><i class="fa-solid fa-chevron-right text-[9px] text-slate-500"></i></a>
+<a class="flex items-center justify-between p-2 rounded bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-white text-xs" href="rubber-and-plastics-industry.html"><span>• Rubber and Plastics</span><i class="fa-solid fa-chevron-right text-[9px] text-slate-500"></i></a>
+<a class="flex items-center justify-between p-2 rounded bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-white text-xs" href="steel-industry.html"><span>• Steel Industry</span><i class="fa-solid fa-chevron-right text-[9px] text-slate-500"></i></a>
+<a class="flex items-center justify-between p-2 rounded bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-white text-xs" href="textile-industry.html"><span>• Textile Industry</span><i class="fa-solid fa-chevron-right text-[9px] text-slate-500"></i></a>
+<a class="flex items-center justify-between p-2 rounded bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-white text-xs" href="wind-power-industry.html"><span>• Wind Power Industry</span><i class="fa-solid fa-chevron-right text-[9px] text-slate-500"></i></a>
+<a class="flex items-center justify-between p-2 rounded bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-white text-xs" href="wire-drawing-industry.html"><span>• Wire Drawing Industry</span><i class="fa-solid fa-chevron-right text-[9px] text-slate-500"></i></a>
+<a class="flex items-center justify-between p-2 rounded bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-white text-xs" href="wood-industry.html"><span>• Wood Industry</span><i class="fa-solid fa-chevron-right text-[9px] text-slate-500"></i></a>
+</div>
+</div>
+
+<!-- Brands -->
+<a class="p-2.5 rounded-lg bg-slate-900/90 text-white hover:text-sky-400 border border-slate-800 flex items-center justify-between font-bold text-xs uppercase" href="brands.html">
+<span class="flex items-center gap-2"><i class="fa-solid fa-award text-amber-400 text-xs"></i> Brands &amp; OEM</span>
+<i class="fa-solid fa-chevron-right text-[10px] text-slate-500"></i>
+</a>
+
+<!-- Contact Us -->
+<a class="p-2.5 rounded-lg bg-slate-900/90 text-white hover:text-sky-400 border border-slate-800 flex items-center justify-between font-bold text-xs uppercase" href="contact-us.html">
+<span class="flex items-center gap-2"><i class="fa-solid fa-phone-volume text-amber-400 text-xs"></i> Contact Us</span>
+<i class="fa-solid fa-chevron-right text-[10px] text-slate-500"></i>
+</a>
 </div>
 
 <!-- Mobile Direct Action Buttons -->
