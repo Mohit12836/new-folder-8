@@ -1,7 +1,7 @@
 {
   "website": "Belubeari Exim Industrial Solutions",
   "version": "2.0.0",
-  "scannedAt": "2026-10-09T00:18:52.797160",
+  "scannedAt": "2026-10-09T10:14:25.257747",
   "framework": "HTML5 / Tailwind CSS / Motion.dev / Web Audio API",
   "totalPages": 54,
   "pages": [
@@ -85,7 +85,7 @@
             },
             {
               "id": "page.about-us.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "about-us.html",
@@ -195,7 +195,7 @@
             },
             {
               "id": "page.automation-industry.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "automation-industry.html",
@@ -359,7 +359,7 @@
             },
             {
               "id": "page.automotive-industry.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "automotive-industry.html",
@@ -375,7 +375,7 @@
           "elements": [
             {
               "id": "page.automotive-industry.main.btn_1",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "button",
               "tag": "a",
               "file": "automotive-industry.html",
@@ -501,7 +501,7 @@
             },
             {
               "id": "page.ball-bearing.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "ball-bearing.html",
@@ -665,7 +665,7 @@
             },
             {
               "id": "page.bearings.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "bearings.html",
@@ -681,7 +681,7 @@
           "elements": [
             {
               "id": "page.bearings.main.btn_1",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "button",
               "tag": "a",
               "file": "bearings.html",
@@ -807,7 +807,7 @@
             },
             {
               "id": "page.belts.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "belts.html",
@@ -823,7 +823,7 @@
           "elements": [
             {
               "id": "page.belts.main.btn_1",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "button",
               "tag": "a",
               "file": "belts.html",
@@ -949,7 +949,7 @@
             },
             {
               "id": "page.brands.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "brands.html",
@@ -1199,7 +1199,7 @@
             },
             {
               "id": "page.cement-industry.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "cement-industry.html",
@@ -1363,7 +1363,7 @@
             },
             {
               "id": "page.chemical-industry.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "chemical-industry.html",
@@ -1527,7 +1527,7 @@
             },
             {
               "id": "page.contact-us.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "contact-us.html",
@@ -1637,7 +1637,7 @@
             },
             {
               "id": "page.continental.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "continental.html",
@@ -1653,7 +1653,7 @@
           "elements": [
             {
               "id": "page.continental.main.btn_1",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "button",
               "tag": "a",
               "file": "continental.html",
@@ -1779,7 +1779,7 @@
             },
             {
               "id": "page.conveyor-belts.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "conveyor-belts.html",
@@ -1943,7 +1943,7 @@
             },
             {
               "id": "page.cots-apron.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "cots-apron.html",
@@ -2107,7 +2107,7 @@
             },
             {
               "id": "page.fag.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "fag.html",
@@ -2123,7 +2123,7 @@
           "elements": [
             {
               "id": "page.fag.main.btn_1",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "button",
               "tag": "a",
               "file": "fag.html",
@@ -2249,7 +2249,7 @@
             },
             {
               "id": "page.fenner.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "fenner.html",
@@ -2265,7 +2265,7 @@
           "elements": [
             {
               "id": "page.fenner.main.btn_1",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "button",
               "tag": "a",
               "file": "fenner.html",
@@ -2391,7 +2391,7 @@
             },
             {
               "id": "page.flat-belts.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "flat-belts.html",
@@ -2555,7 +2555,7 @@
             },
             {
               "id": "page.food-industry.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "food-industry.html",
@@ -2719,7 +2719,7 @@
             },
             {
               "id": "page.gates.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "gates.html",
@@ -2735,7 +2735,7 @@
           "elements": [
             {
               "id": "page.gates.main.btn_1",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "button",
               "tag": "a",
               "file": "gates.html",
@@ -2861,7 +2861,7 @@
             },
             {
               "id": "page.glass-industry.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "glass-industry.html",
@@ -3025,7 +3025,7 @@
             },
             {
               "id": "page.hydropower-industry.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "hydropower-industry.html",
@@ -3189,7 +3189,7 @@
             },
             {
               "id": "page.ijk.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "ijk.html",
@@ -3205,7 +3205,7 @@
           "elements": [
             {
               "id": "page.ijk.main.btn_1",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "button",
               "tag": "a",
               "file": "ijk.html",
@@ -3331,7 +3331,7 @@
             },
             {
               "id": "page.index.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "index.html",
@@ -3471,13 +3471,13 @@
         },
         {
           "id": "page.index.section_7",
-          "name": "WHAT PEOLPE ARE SAYING",
+          "name": "WHAT PEOPLE ARE SAYING",
           "type": "section",
           "file": "index.html",
           "elements": [
             {
               "id": "page.index.section_7.heading",
-              "name": "WHAT PEOLPE ARE SAYING",
+              "name": "WHAT PEOPLE ARE SAYING",
               "type": "heading",
               "tag": "h2",
               "file": "index.html"
@@ -3655,7 +3655,7 @@
             },
             {
               "id": "page.industries.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "industries.html",
@@ -3795,7 +3795,7 @@
             },
             {
               "id": "page.linear-motion-bearing.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "linear-motion-bearing.html",
@@ -3959,7 +3959,7 @@
             },
             {
               "id": "page.lubrications-oil-grease.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "lubrications-oil-grease.html",
@@ -3982,7 +3982,7 @@
             },
             {
               "id": "page.lubrications-oil-grease.main.btn_1",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "button",
               "tag": "a",
               "file": "lubrications-oil-grease.html",
@@ -4108,7 +4108,7 @@
             },
             {
               "id": "page.marine-industry.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "marine-industry.html",
@@ -4272,7 +4272,7 @@
             },
             {
               "id": "page.megadyne.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "megadyne.html",
@@ -4288,7 +4288,7 @@
           "elements": [
             {
               "id": "page.megadyne.main.btn_1",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "button",
               "tag": "a",
               "file": "megadyne.html",
@@ -4414,7 +4414,7 @@
             },
             {
               "id": "page.metalworking.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "metalworking.html",
@@ -4578,7 +4578,7 @@
             },
             {
               "id": "page.mining-industry.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "mining-industry.html",
@@ -4742,7 +4742,7 @@
             },
             {
               "id": "page.mitsuboshi.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "mitsuboshi.html",
@@ -4758,7 +4758,7 @@
           "elements": [
             {
               "id": "page.mitsuboshi.main.btn_1",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "button",
               "tag": "a",
               "file": "mitsuboshi.html",
@@ -4884,7 +4884,7 @@
             },
             {
               "id": "page.nachi.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "nachi.html",
@@ -4900,7 +4900,7 @@
           "elements": [
             {
               "id": "page.nachi.main.btn_1",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "button",
               "tag": "a",
               "file": "nachi.html",
@@ -5026,7 +5026,7 @@
             },
             {
               "id": "page.nmb.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "nmb.html",
@@ -5042,7 +5042,7 @@
           "elements": [
             {
               "id": "page.nmb.main.btn_1",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "button",
               "tag": "a",
               "file": "nmb.html",
@@ -5168,7 +5168,7 @@
             },
             {
               "id": "page.oil-gas-industry.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "oil-gas-industry.html",
@@ -5332,7 +5332,7 @@
             },
             {
               "id": "page.oil-grease.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "oil-grease.html",
@@ -5496,7 +5496,7 @@
             },
             {
               "id": "page.overhead-cranes.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "overhead-cranes.html",
@@ -5660,7 +5660,7 @@
             },
             {
               "id": "page.paper-industry.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "paper-industry.html",
@@ -5824,7 +5824,7 @@
             },
             {
               "id": "page.pharmaceutical-industry.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "pharmaceutical-industry.html",
@@ -5988,7 +5988,7 @@
             },
             {
               "id": "page.pillow-block-bearing.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "pillow-block-bearing.html",
@@ -6152,7 +6152,7 @@
             },
             {
               "id": "page.products.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "products.html",
@@ -6262,7 +6262,7 @@
             },
             {
               "id": "page.railway-industry.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "railway-industry.html",
@@ -6426,7 +6426,7 @@
             },
             {
               "id": "page.rubber-and-plastics-industry.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "rubber-and-plastics-industry.html",
@@ -6590,7 +6590,7 @@
             },
             {
               "id": "page.rubber-emery-roller-covering.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "rubber-emery-roller-covering.html",
@@ -6754,7 +6754,7 @@
             },
             {
               "id": "page.seals-o-ring.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "seals-o-ring.html",
@@ -6918,7 +6918,7 @@
             },
             {
               "id": "page.skf.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "skf.html",
@@ -6934,7 +6934,7 @@
           "elements": [
             {
               "id": "page.skf.main.btn_1",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "button",
               "tag": "a",
               "file": "skf.html",
@@ -7060,7 +7060,7 @@
             },
             {
               "id": "page.special-coated-belts.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "special-coated-belts.html",
@@ -7224,7 +7224,7 @@
             },
             {
               "id": "page.steel-industry.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "steel-industry.html",
@@ -7388,7 +7388,7 @@
             },
             {
               "id": "page.test.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "test.html",
@@ -7411,7 +7411,7 @@
             },
             {
               "id": "page.test.main.btn_1",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "button",
               "tag": "a",
               "file": "test.html",
@@ -7537,7 +7537,7 @@
             },
             {
               "id": "page.textile-industry.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "textile-industry.html",
@@ -7701,7 +7701,7 @@
             },
             {
               "id": "page.timing-belts.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "timing-belts.html",
@@ -7865,7 +7865,7 @@
             },
             {
               "id": "page.timken.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "timken.html",
@@ -7881,7 +7881,7 @@
           "elements": [
             {
               "id": "page.timken.main.btn_1",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "button",
               "tag": "a",
               "file": "timken.html",
@@ -8007,7 +8007,7 @@
             },
             {
               "id": "page.v-belts.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "v-belts.html",
@@ -8171,7 +8171,7 @@
             },
             {
               "id": "page.wind-power-industry.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "wind-power-industry.html",
@@ -8335,7 +8335,7 @@
             },
             {
               "id": "page.wire-drawing-industry.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "wire-drawing-industry.html",
@@ -8499,7 +8499,7 @@
             },
             {
               "id": "page.wood-industry.navbar.cta",
-              "name": "Get A Quote",
+              "name": "Get Quote",
               "type": "cta_button",
               "tag": "a",
               "file": "wood-industry.html",

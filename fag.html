@@ -480,22 +480,23 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <main class="site-main" id="main">
 <article class="post-457 page type-page status-publish ast-article-single" id="post-457" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
 <!-- 🌟 24K ROYAL LIQUID GOLD EMBOSSED NAVIGATION BAR 🌟 -->
+<!-- 🌟 24K ROYAL LIQUID GOLD EMBOSSED NAVIGATION BAR 🌟 -->
 <header class="sticky top-0 z-50 navbar-royal-gold transition-all">
 <!-- 24K Golden Laser Shimmer Patti -->
 <div class="golden-laser-patti"></div>
-<div class="max-w-7xl mx-auto px-4 flex items-center justify-between h-20 relative z-10">
+<div class="max-w-7xl mx-auto px-3 sm:px-4 flex items-center justify-between h-16 sm:h-20 relative z-10">
 <!-- BRAND LOGO & LIVE TRADE DESK STATUS -->
-<div class="flex items-center gap-4">
-<a class="flex items-center gap-3 py-1 group" href="index.html">
-<img alt="Belubeari Exim Logo" class="h-12 sm:h-14 w-auto object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)] transition-transform group-hover:scale-105" src="assets/images/logo.png"/>
+<div class="flex items-center gap-2 sm:gap-4">
+<a class="flex items-center gap-2 sm:gap-3 py-1 group" href="index.html">
+<img alt="Belubeari Exim Logo" class="h-10 sm:h-14 w-auto object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)] transition-transform group-hover:scale-105" src="assets/images/logo.png"/>
 </a>
-<!-- Live Mumbai Trade Desk Status Pill -->
-<div class="hidden xl:inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-950/90 border border-black/40 text-[11px] font-mono text-amber-300 shadow-lg">
-<span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-<span>Trade Desk: <strong class="text-white">Active</strong></span>
+<!-- Live Mumbai Trade Desk Status Pill - Visible on Mobile & PC -->
+<div class="inline-flex items-center gap-1.5 px-2.5 sm:px-3.5 py-0.5 sm:py-1 rounded-full bg-slate-950/90 border border-amber-400/40 text-[9px] sm:text-[11px] font-mono text-amber-300 shadow-lg">
+<span class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-400 animate-ping"></span>
+<span class="hidden xs:inline">Trade Desk:</span> <strong class="text-white">Active</strong>
 </div>
 </div>
-<!-- MAIN MENU (Equal-Sized Symmetrical Modular Glass Tiles) -->
+<!-- MAIN MENU (Equal-Sized Symmetrical Modular Glass Tiles - Desktop) -->
 <nav aria-label="Breadcrumb" class="hidden lg:flex items-center gap-1.5 xl:gap-2">
 <a class="nav-glass-box" href="index.html">
 <span class="font-black text-white">Home</span>
@@ -560,24 +561,25 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <span class="font-black text-white">Contact Us</span>
 </a>
 </nav>
-<!-- BOX-TYPE GLOWING LIGHTING BUTTON & MOBILE MENU TOGGLE -->
-<div class="flex items-center gap-3">
-<a class="lg:hidden w-9 h-9 rounded-lg bg-slate-950 text-amber-300 flex items-center justify-center border border-black/40 shadow-md" href="tel:+919967384878" title="Call Now">
-<i class="fa-solid fa-phone text-sm"></i>
+<!-- BOX-TYPE GLOWING LIGHTING BUTTON & MOBILE CONTROLS -->
+<div class="flex items-center gap-1.5 sm:gap-3">
+<!-- Box-Type Button with Moving Glowing Border Light - Active & Visible on Mobile & PC -->
+<a class="box-btn-glowing text-[10px] sm:text-xs px-2.5 sm:px-4 h-8 sm:h-9" href="contact-us.html">
+<i class="fa-solid fa-bolt text-amber-400 text-[10px] sm:text-xs"></i>
+<span class="font-black text-white">Get Quote</span>
 </a>
-<button aria-label="Toggle Menu" class="lg:hidden w-9 h-9 rounded-lg bg-slate-950 text-amber-300 flex items-center justify-center border border-black/40 hover:bg-black focus:outline-none shadow-md" onclick="toggleMobileNavDrawer()" type="button">
-<i class="fa-solid fa-bars text-lg" id="mobile-menu-icon"></i>
+<a class="lg:hidden w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-slate-950 text-amber-300 flex items-center justify-center border border-amber-400/30 shadow-md active:scale-95 transition" href="tel:+919967384878" title="Call Now">
+<i class="fa-solid fa-phone text-xs sm:text-sm"></i>
+</a>
+<button aria-label="Toggle Menu" class="lg:hidden w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-slate-950 text-amber-300 flex items-center justify-center border border-amber-400/30 hover:bg-black focus:outline-none shadow-md active:scale-95 transition" onclick="toggleMobileNavDrawer()" type="button">
+<i class="fa-solid fa-bars text-sm sm:text-base" id="mobile-menu-icon"></i>
 </button>
-<!-- Box-Type Button with Moving Glowing Border Light + Pure White Bold Text + Sound -->
-<a class="box-btn-glowing hidden sm:inline-flex" href="contact-us.html">
-<i class="fa-solid fa-bolt text-amber-400 text-xs"></i>
-<span class="font-black text-white">Get A Quote</span>
-</a>
 </div>
 </div>
-<!-- MOBILE NAVIGATION DRAWER -->
-<div class="hidden lg:hidden bg-slate-950 border-t border-slate-800 text-white px-4 py-5 space-y-4 shadow-2xl transition-all" id="mobile-nav-drawer">
-<div class="grid grid-cols-2 gap-2 text-sm font-semibold uppercase">
+<!-- HIGH-END MOBILE NAVIGATION DRAWER -->
+<div class="hidden lg:hidden bg-slate-950 border-t border-amber-400/30 text-white px-4 py-5 space-y-4 shadow-2xl transition-all" id="mobile-nav-drawer">
+<!-- Top Main Links -->
+<div class="grid grid-cols-2 gap-2 text-xs font-bold uppercase">
 <a class="p-2.5 rounded-lg bg-slate-900 text-sky-400 border border-slate-800 flex items-center gap-2" href="index.html">
 <i class="fa-solid fa-house text-xs"></i> Home
 </a>
@@ -585,24 +587,39 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <i class="fa-solid fa-building text-xs"></i> About Us
 </a>
 <a class="p-2.5 rounded-lg bg-slate-900/60 hover:bg-slate-900 text-slate-200 border border-slate-800/80 flex items-center gap-2" href="products.html">
-<i class="fa-solid fa-boxes-stacked text-xs"></i> Products
+<i class="fa-solid fa-boxes-stacked text-xs"></i> Products (12)
 </a>
 <a class="p-2.5 rounded-lg bg-slate-900/60 hover:bg-slate-900 text-slate-200 border border-slate-800/80 flex items-center gap-2" href="brands.html">
 <i class="fa-solid fa-award text-xs"></i> Brands
 </a>
 <a class="p-2.5 rounded-lg bg-slate-900/60 hover:bg-slate-900 text-slate-200 border border-slate-800/80 flex items-center gap-2" href="industries.html">
-<i class="fa-solid fa-industry text-xs"></i> Industries
+<i class="fa-solid fa-industry text-xs"></i> Industries (20)
 </a>
 <a class="p-2.5 rounded-lg bg-slate-900/60 hover:bg-slate-900 text-slate-200 border border-slate-800/80 flex items-center gap-2" href="contact-us.html">
 <i class="fa-solid fa-phone-volume text-xs"></i> Contact Us
 </a>
 </div>
+
+<!-- Fast Product Shortcuts on Mobile -->
+<div class="pt-2 border-t border-slate-800/80">
+<div class="text-[10px] font-bold uppercase tracking-widest text-amber-400 mb-2 font-mono">Quick Category Links:</div>
+<div class="flex flex-wrap gap-1.5">
+<a href="ball-bearing.html" class="text-[10px] bg-slate-900 hover:bg-sky-900/40 text-slate-300 hover:text-sky-300 px-2.5 py-1 rounded border border-slate-800">Ball Bearing</a>
+<a href="timing-belts.html" class="text-[10px] bg-slate-900 hover:bg-sky-900/40 text-slate-300 hover:text-sky-300 px-2.5 py-1 rounded border border-slate-800">Timing Belts</a>
+<a href="conveyor-belts.html" class="text-[10px] bg-slate-900 hover:bg-sky-900/40 text-slate-300 hover:text-sky-300 px-2.5 py-1 rounded border border-slate-800">Conveyor Belts</a>
+<a href="v-belts.html" class="text-[10px] bg-slate-900 hover:bg-sky-900/40 text-slate-300 hover:text-sky-300 px-2.5 py-1 rounded border border-slate-800">V-Belts</a>
+<a href="linear-motion-bearing.html" class="text-[10px] bg-slate-900 hover:bg-sky-900/40 text-slate-300 hover:text-sky-300 px-2.5 py-1 rounded border border-slate-800">LM Guides</a>
+<a href="oil-grease.html" class="text-[10px] bg-slate-900 hover:bg-sky-900/40 text-slate-300 hover:text-sky-300 px-2.5 py-1 rounded border border-slate-800">Oil &amp; Grease</a>
+</div>
+</div>
+
+<!-- Mobile Direct Action Buttons -->
 <div class="pt-2 border-t border-slate-800/80 flex gap-2">
-<a class="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider py-2.5 rounded text-center flex items-center justify-center gap-1.5" href="https://wa.me/919967384878?text=Hi%20Belubeari%20Exim,%20I%20need%20a%20quotation" target="_blank">
-<i class="fa-brands fa-whatsapp"></i> WhatsApp RFQ
+<a class="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider py-2.5 rounded text-center flex items-center justify-center gap-1.5 shadow-lg" href="https://wa.me/919967384878?text=Hi%20Belubeari%20Exim,%20I%20need%20a%20quotation" target="_blank">
+<i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp RFQ
 </a>
-<a class="flex-1 bg-primary hover:bg-primary-dark text-white text-xs font-bold uppercase tracking-wider py-2.5 rounded text-center flex items-center justify-center gap-1.5" href="tel:+919967384878">
-<i class="fa-solid fa-phone"></i> Call Direct
+<a class="flex-1 bg-primary hover:bg-primary-dark text-white text-xs font-bold uppercase tracking-wider py-2.5 rounded text-center flex items-center justify-center gap-1.5 shadow-lg" href="tel:+919967384878">
+<i class="fa-solid fa-phone text-xs"></i> Call Direct
 </a>
 </div>
 </div>
@@ -925,6 +942,37 @@ var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/raysinternational.net\/wp
 var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof HTMLScriptElement))throw new Error("Element missing: "+e);const r=JSON.parse(t.text),s=(window._wpemojiSettings=r,"wpEmojiSettingsSupports"),o=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(s,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const r=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===r[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,r){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!r(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,r){let a;const s=(a="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),o=(s.textBaseline="top",s.font="600 32px Arial",{});return e.forEach(e=>{o[e]=t(s,e,n,r)}),o}function a(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}r.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(s));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(o),u.toString(),c.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"});const a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=e=>{i(n=e.data),a.terminate(),t(n)})}catch(e){}i(n=f(o,u,c,p))}t(n)}).then(e=>{for(const n in e)r.supports[n]=e[n],r.supports.everything=r.supports.everything&&r.supports[n],"flag"!==n&&(r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&r.supports[n]);var t;r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&!r.supports.flag,r.supports.everything||((t=r.source||{}).concatemoji?a(t.concatemoji):t.wpemoji&&t.twemoji&&(a(t.twemoji),a(t.wpemoji)))});
 //# sourceURL=https://raysinternational.net/wp-includes/js/wp-emoji-loader.min.js
 </script>
+<!-- FLOATING WHATSAPP FOR DESKTOP (Hidden on Mobile to Avoid Clutter with Bottom Dock) -->
+<div class="hidden sm:block fixed bottom-6 right-6 z-40">
+<a class="pulse-ring-container w-14 h-14 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full flex items-center justify-center text-2xl shadow-2xl transition transform hover:scale-110" href="https://wa.me/919967384878?text=Hello%20Belubeari%20Exim" target="_blank" title="Chat on WhatsApp">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+</div>
+<!-- NATIVE APP-LIKE MOBILE BOTTOM NAVIGATION DOCK -->
+<nav aria-label="Mobile Bottom App Bar" class="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-slate-950/95 backdrop-blur-xl border-t border-slate-800 shadow-2xl py-1.5 px-2 pb-[env(safe-area-inset-bottom,8px)]">
+<div class="grid grid-cols-5 gap-1 text-center items-center max-w-md mx-auto">
+<a class="flex flex-col items-center justify-center py-1 text-slate-400 hover:text-sky-400 font-medium transition" href="index.html">
+<i class="fa-solid fa-house text-base mb-0.5"></i>
+<span class="text-[10px] tracking-tight">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center py-1 text-slate-400 hover:text-sky-400 font-medium transition" href="products.html">
+<i class="fa-solid fa-boxes-stacked text-base mb-0.5"></i>
+<span class="text-[10px] tracking-tight">Products</span>
+</a>
+<a class="flex flex-col items-center justify-center py-1 text-sky-400 font-bold" href="brands.html">
+<i class="fa-solid fa-award text-base mb-0.5"></i>
+<span class="text-[10px] tracking-tight">Brands</span>
+</a>
+<a class="flex flex-col items-center justify-center py-1 text-slate-400 hover:text-sky-400 font-medium transition" href="industries.html">
+<i class="fa-solid fa-industry text-base mb-0.5"></i>
+<span class="text-[10px] tracking-tight">Industries</span>
+</a>
+<a class="flex flex-col items-center justify-center py-1 text-emerald-400 font-bold transition" href="https://wa.me/919967384878?text=Hi%20Belubeari%20Exim,%20I%20need%20a%20quotation" target="_blank">
+<i class="fa-brands fa-whatsapp text-lg mb-0.5 animate-bounce"></i>
+<span class="text-[10px] tracking-tight">RFQ</span>
+</a>
+</div>
+</nav>
 <script src="assets/js/animations.js"></script>
 </body>
 </html>
