@@ -144,28 +144,81 @@
   opacity: 1;
 }
 
-/* 4. BUTTONS: SHIMMER & MAGNETIC GLOW */
-.btn-shimmer {
-  position: relative;
-  overflow: hidden;
-  background-size: 200% 100%;
+/* 4. BUTTONS: ROTATING WHITE LASER BORDER BEAM & MAGNETIC GLOW */
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
 }
 
-.btn-shimmer::before {
+@property --laser-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@property --btn-light-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes border-beam-rotate {
+  0% { --border-angle: 0deg; --laser-angle: 0deg; --btn-light-angle: 0deg; }
+  100% { --border-angle: 360deg; --laser-angle: 360deg; --btn-light-angle: 360deg; }
+}
+
+.btn-shine,
+.btn-shimmer,
+.box-btn-glowing,
+.btn-laser-border {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* 🌟 Chalti hui Pure White Electric Laser Border Beam Har Button Par 🌟 */
+.btn-shine::before,
+.btn-shimmer::before,
+.box-btn-glowing::before,
+.btn-laser-border::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: -100%;
-  width: 60%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
-  transform: skewX(-22deg);
-  animation: btn-shine-sweep 3.5s ease-in-out infinite;
+  inset: -2px;
+  border-radius: inherit;
+  padding: 2px;
+  background: conic-gradient(from var(--border-angle, 0deg), transparent 25%, rgba(255, 255, 255, 0.4) 40%, #ffffff 50%, rgba(255, 255, 255, 0.4) 60%, transparent 75%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: border-beam-rotate 2.8s linear infinite;
+  pointer-events: none;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 10px rgba(255, 255, 255, 0.6));
+  z-index: 2;
+}
+
+/* Shimmer Light Sweep across button body */
+.btn-shine::after,
+.btn-shimmer::after,
+.box-btn-glowing::after,
+.btn-laser-border::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -75%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  transform: rotate(25deg);
+  animation: btn-shine-sweep 3.5s infinite ease-in-out;
+  pointer-events: none;
+  z-index: 3;
 }
 
 @keyframes btn-shine-sweep {
-  0% { left: -100%; }
-  35%, 100% { left: 200%; }
+  0% { left: -75%; }
+  35% { left: 140%; }
+  100% { left: 140%; }
 }
 
 .btn-magnetic {
