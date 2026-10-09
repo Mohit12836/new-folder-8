@@ -414,6 +414,47 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
     }
   ]
 }</script><link href="assets/css/animations.css" rel="stylesheet"/>
+<script>
+function toggleMobileNavDrawer() {
+  var drawer = document.getElementById('mobile-nav-drawer');
+  var icon = document.getElementById('mobile-menu-icon');
+  if (!drawer) return;
+  drawer.classList.toggle('hidden');
+  if (icon) {
+    if (drawer.classList.contains('hidden')) {
+      icon.className = 'fa-solid fa-bars text-sm sm:text-base text-amber-300';
+    } else {
+      icon.className = 'fa-solid fa-xmark text-sm sm:text-base text-amber-300';
+    }
+  }
+}
+function toggleMobileSubmenu(submenuId, btn) {
+  var sm = document.getElementById(submenuId);
+  if (!sm) return;
+  var isCurrentlyHidden = sm.style.display === 'none' || sm.classList.contains('hidden');
+  if (isCurrentlyHidden) {
+    sm.classList.remove('hidden');
+    sm.style.display = 'block';
+    if (btn) {
+      var ch = btn.querySelector('.submenu-chevron');
+      if (ch) ch.style.transform = 'rotate(180deg)';
+      var tag = btn.querySelector('.tap-tag');
+      if (tag) tag.innerText = 'Hide ▲';
+    }
+  } else {
+    sm.classList.add('hidden');
+    sm.style.display = 'none';
+    if (btn) {
+      var ch = btn.querySelector('.submenu-chevron');
+      if (ch) ch.style.transform = 'rotate(0deg)';
+      var tag = btn.querySelector('.tap-tag');
+      if (tag) tag.innerText = 'Tap ▼';
+    }
+  }
+}
+window.toggleMobileNavDrawer = toggleMobileNavDrawer;
+window.toggleMobileSubmenu = toggleMobileSubmenu;
+</script>
 </head>
 <body class="wp-singular page-template-default page page-id-467 page-child parent-pageid-447 wp-custom-logo wp-embed-responsive wp-theme-astra jkit-color-scheme ast-desktop ast-plain-container ast-no-sidebar astra-4.14.0 ast-single-post ast-inherit-site-logo-transparent ast-hfb-header ast-normal-title-enabled elementor-default elementor-kit-7" itemscope="itemscope" itemtype="https://schema.org/WebPage">
 <!-- 3-SECOND CINEMATIC SITE PRELOADER -->
@@ -479,6 +520,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <div class="content-area primary" id="primary">
 <main class="site-main" id="main">
 <article class="post-467 page type-page status-publish ast-article-single" id="post-467" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+<!-- 🌟 24K ROYAL LIQUID GOLD EMBOSSED NAVIGATION BAR 🌟 -->
 <!-- 🌟 24K ROYAL LIQUID GOLD EMBOSSED NAVIGATION BAR 🌟 -->
 <!-- 🌟 24K ROYAL LIQUID GOLD EMBOSSED NAVIGATION BAR 🌟 -->
 <!-- 🌟 24K ROYAL LIQUID GOLD EMBOSSED NAVIGATION BAR 🌟 -->
@@ -577,7 +619,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </button>
 </div>
 </div>
-<!-- HIGH-END MOBILE NAVIGATION DRAWER WITH ACCORDION SUB-MENUS -->
+<!-- HIGH-END MOBILE NAVIGATION DRAWER WITH ROBUST BUTTON ACCORDION CONTROLS -->
 <div class="hidden lg:hidden bg-slate-950 border-t border-amber-400/30 text-white px-3.5 py-4 space-y-2.5 shadow-2xl transition-all max-h-[85vh] overflow-y-auto" id="mobile-nav-drawer">
 <!-- Navigation Links & Accordions -->
 <div class="space-y-1.5">
@@ -593,17 +635,17 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <i class="fa-solid fa-chevron-right text-[10px] text-slate-500"></i>
 </a>
 
-<!-- Products (Expandable Accordion) -->
+<!-- Products (Robust Button Accordion) -->
 <div class="border border-slate-800 rounded-lg overflow-hidden bg-slate-900/80">
-<div class="p-2.5 flex items-center justify-between cursor-pointer mobile-submenu-btn hover:bg-slate-800 transition" onclick="toggleMobileSubmenu('mobile-products-submenu', this)">
+<button type="button" class="w-full p-2.5 flex items-center justify-between text-left cursor-pointer hover:bg-slate-800 active:bg-slate-700 transition" onclick="toggleMobileSubmenu('mobile-products-submenu', this)">
 <span class="flex items-center gap-2 font-bold text-xs uppercase text-white"><i class="fa-solid fa-boxes-stacked text-amber-400 text-xs"></i> Products (12 Lines)</span>
-<div class="flex items-center gap-1.5">
-<span class="text-[9px] font-mono text-amber-300 bg-amber-950/60 px-1.5 py-0.5 rounded border border-amber-400/40">Tap ▼</span>
-<i class="fa-solid fa-chevron-down text-xs text-amber-400 transition-transform duration-300"></i>
+<div class="flex items-center gap-1.5 pointer-events-none">
+<span class="tap-tag text-[9px] font-mono text-amber-300 bg-amber-950/60 px-1.5 py-0.5 rounded border border-amber-400/40">Tap ▼</span>
+<i class="submenu-chevron fa-solid fa-chevron-down text-xs text-amber-400 transition-transform duration-300"></i>
 </div>
-</div>
+</button>
 <!-- Products Sub-Buttons List -->
-<div class="hidden mobile-submenu px-2 pb-2.5 pt-1 space-y-1 bg-slate-950 border-t border-slate-800 max-h-64 overflow-y-auto" id="mobile-products-submenu">
+<div class="mobile-submenu px-2 pb-2.5 pt-1 space-y-1 bg-slate-950 border-t border-slate-800 max-h-64 overflow-y-auto" id="mobile-products-submenu" style="display: none;">
 <a class="flex items-center justify-between p-2 rounded bg-sky-950/60 border border-sky-800/60 text-sky-300 text-xs font-bold" href="products.html">
 <span>★ All 12 Products Page</span><i class="fa-solid fa-arrow-right text-[10px] text-sky-400"></i>
 </a>
@@ -622,17 +664,17 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </div>
 </div>
 
-<!-- Industries (Expandable Accordion) -->
+<!-- Industries (Robust Button Accordion) -->
 <div class="border border-slate-800 rounded-lg overflow-hidden bg-slate-900/80">
-<div class="p-2.5 flex items-center justify-between cursor-pointer mobile-submenu-btn hover:bg-slate-800 transition" onclick="toggleMobileSubmenu('mobile-industries-submenu', this)">
+<button type="button" class="w-full p-2.5 flex items-center justify-between text-left cursor-pointer hover:bg-slate-800 active:bg-slate-700 transition" onclick="toggleMobileSubmenu('mobile-industries-submenu', this)">
 <span class="flex items-center gap-2 font-bold text-xs uppercase text-white"><i class="fa-solid fa-industry text-amber-400 text-xs"></i> Industries (20 Sectors)</span>
-<div class="flex items-center gap-1.5">
-<span class="text-[9px] font-mono text-amber-300 bg-amber-950/60 px-1.5 py-0.5 rounded border border-amber-400/40">Tap ▼</span>
-<i class="fa-solid fa-chevron-down text-xs text-amber-400 transition-transform duration-300"></i>
+<div class="flex items-center gap-1.5 pointer-events-none">
+<span class="tap-tag text-[9px] font-mono text-amber-300 bg-amber-950/60 px-1.5 py-0.5 rounded border border-amber-400/40">Tap ▼</span>
+<i class="submenu-chevron fa-solid fa-chevron-down text-xs text-amber-400 transition-transform duration-300"></i>
 </div>
-</div>
+</button>
 <!-- Industries Sub-Buttons List -->
-<div class="hidden mobile-submenu px-2 pb-2.5 pt-1 space-y-1 bg-slate-950 border-t border-slate-800 max-h-64 overflow-y-auto" id="mobile-industries-submenu">
+<div class="mobile-submenu px-2 pb-2.5 pt-1 space-y-1 bg-slate-950 border-t border-slate-800 max-h-64 overflow-y-auto" id="mobile-industries-submenu" style="display: none;">
 <a class="flex items-center justify-between p-2 rounded bg-sky-950/60 border border-sky-800/60 text-sky-300 text-xs font-bold" href="industries.html">
 <span>★ All 20 Industries Page</span><i class="fa-solid fa-arrow-right text-[10px] text-sky-400"></i>
 </a>
